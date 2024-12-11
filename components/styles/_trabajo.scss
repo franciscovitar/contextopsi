@@ -1,0 +1,120 @@
+.contenedor-principal-Trabajos {
+    padding: 100px 50px 200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #ededed99;
+    text-align: center;
+
+    @media (max-width:500px) {
+        padding: 100px 10px 200px;
+    }
+
+    .titulo {
+        padding: 100px 30px;
+        font-weight: 700;
+        font-size: 32px;
+        padding-bottom: 0;
+
+        @media (max-width: 600px) {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            // margin-bottom: 40px;
+            color: #B28EE8;
+        }
+
+        p {
+            margin: auto;
+            width: 80%;
+            font-weight: 300;
+            font-size: 24px;
+
+            @media (max-width:800px) {
+                width: 100%;
+                font-size: 22px;
+            }
+
+            @media (max-width:450px) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .elSlider {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+        // padding: 0 20px;
+    }
+
+    .trabajos {
+        padding: 50px 20px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+
+
+        .trabajo {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #1111111a;
+            // border-radius: 5px;
+
+            .npmyest {
+                padding: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .estrellas {
+                    display: flex;
+                    gap: 5px;
+                    padding: 0px;
+                }
+
+                i {
+                    color: #F3B807;
+                }
+
+                h4 {
+                    font-size: 19px;
+                    text-align: end;
+                }
+            }
+
+
+            p {
+                text-align: start;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    .boton {
+        border-radius: 20px;
+        border: solid 2px #ffffff;
+        background-color: #B28EE8;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 16px 34px;
+        cursor: pointer;
+
+
+        &:hover {
+            transition: all 0.2s;
+            background-color: #B28EE8;
+            color: #fff;
+        }
+
+        @media (max-width:800px) {
+            padding: 16px 35px;
+        }
+    }
+}

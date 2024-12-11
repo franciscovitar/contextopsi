@@ -1,0 +1,59 @@
+.contenedor-principal-Profesionales {
+    padding: 200px 50px;
+    // background: linear-gradient(135deg, #b28ee8, #ededed99);
+    text-align: center;
+
+    .titulo {
+        font-size: 32px;
+        font-weight: 700;
+        color: #b28ee8;
+        ;
+
+        // .line {
+        //     background: #b28ee8;
+        //     height: 4px;
+        //     width: 70px;
+        //     margin: auto;
+        // }
+    }
+
+    .elSlider {
+        margin: 50px auto;
+        width: 90%;
+
+        .profesional {
+            display: flex;
+            justify-content: center;
+
+            .card {
+                margin: 5px;
+                background: #fff;
+                border: none;
+                height: 100px;
+                // width: 100px;
+                padding: 5px;
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(167, 167, 167, 0.1);
+                text-align: center;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    // box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+                }
+
+                .name {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #b28ee8;
+                    margin-bottom: 5px;
+                }
+
+                .number {
+                    font-size: 16px;
+                    color: #9F95B6;
+                }
+            }
+        }
+    }
+}

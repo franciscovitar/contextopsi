@@ -1,0 +1,86 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 100px rgba(81, 81, 81, 0.172);
+    padding: 50px;
+    max-width: 700px;
+    margin: 100px auto;
+
+    @media (max-width: 1000px) {
+
+        text-align: center;
+    }
+
+    h3 {
+
+        font-weight: 500;
+        font-size: 25px;
+        color: rgb(55, 0, 10);
+    }
+
+    p {
+        margin: 0;
+
+        color: rgb(88, 90, 97);
+        font-weight: 400;
+    }
+
+    .prueba {
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        color: rgb(88, 90, 97);
+    }
+
+    input,
+    textarea {
+        resize: none;
+        outline: none;
+        border: solid 1px #88888870;
+        padding: 9px 10px;
+        border-radius: 5px;
+        font-size: 17px;
+
+        &::placeholder {
+            color: rgb(73, 80, 87);
+            font-weight: 400;
+            // font-size: 14px;
+        }
+    }
+
+    .enviar {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 10px;
+            color: rgb(88, 90, 97);
+        }
+
+        button {
+            border-radius: 10px;
+            border: solid 2px #ffffff;
+            background-color: #FF6005;
+            text-decoration: none;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 40px;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover {
+                transition: all 0.2s;
+                background-color: #5A7CFF;
+            }
+
+            @media (max-width:800px) {
+                padding: 10px 35px;
+            }
+        }
+    }
+}

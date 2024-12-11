@@ -1,0 +1,12 @@
+.main {
+  margin: auto;
+  color: rgb(0, 0, 0);
+  background: #ededed99;
+}
+
+.line {
+  background-color: #b28ee8;
+  height: 3px;
+  width: 70px;
+  margin: 0px 0 10px 0;
+}

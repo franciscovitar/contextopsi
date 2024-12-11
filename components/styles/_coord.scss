@@ -1,0 +1,113 @@
+.coordination {
+    background-color: #000000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+
+    .coordination-title {
+        margin-top: 100px;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+
+        span {
+            color: #00e496; // Verde vibrante
+        }
+    }
+
+    .coordination-list {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        margin-bottom: 3rem; // Espacio entre las secciones
+        flex-wrap: nowrap; // Para evitar el salto de fila
+
+        .coordination-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 2rem;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .coordination-image-wrapper {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1rem;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 2px solid #b28ee8;
+
+                .coordination-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .coordination-info {
+                .coordination-name {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: #b28ee8;
+                }
+
+                .coordination-mn {
+                    font-size: 0.9rem;
+                    color: #9F95B6;
+                }
+            }
+        }
+    }
+
+    // Media Queries para hacerlo responsive
+    @media (max-width: 1200px) {
+        .coordination-title {
+            font-size: 1.8rem;
+            margin-top: 50px;
+        }
+
+        .coordination-list {
+            .coordination-item {
+                margin-right: 1.5rem; // Reducir márgenes en pantallas más pequeñas
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .coordination-title {
+            font-size: 1.6rem;
+            margin-top: 30px;
+        }
+
+        .coordination-list {
+            flex-wrap: wrap; // Permitir que los elementos se acomoden en varias filas
+            justify-content: center;
+
+            .coordination-item {
+                margin-right: 1rem; // Reducir márgenes
+                margin-bottom: 1rem; // Añadir espacio vertical entre los items
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .coordination-title {
+            font-size: 1.4rem;
+            margin-top: 20px;
+        }
+
+        .coordination-list {
+            flex-direction: column; // Acomodar todo verticalmente en pantallas pequeñas
+            align-items: center;
+
+            .coordination-item {
+                margin-right: 0;
+                margin-bottom: 0.8rem; // Espacio vertical entre items
+            }
+        }
+    }
+}
