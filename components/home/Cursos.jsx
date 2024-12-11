@@ -41,7 +41,7 @@ function Cursos() {
           <Image alt="Cursos" title="Cursos" src={Nos2} />
           <div className="texto">
             <motion.h2 className="h2c" {...tittleVariants}>
-              Inscripción al Curso "Inicios en la Clínica"
+              Inscripción al Curso &quot;Inicios en la Clínica&quot;
             </motion.h2>
             <motion.p {...tittleVariants}>
               Curso organizado por <strong>Contexto.Psi</strong>, dirigido a
