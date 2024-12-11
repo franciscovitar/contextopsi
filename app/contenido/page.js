@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <main className="main">
       <NavBar />
-      <HomeWelcome />
+      {/* <HomeWelcome /> */}
 
-      <Cursos />
+      {/* <Cursos /> */}
       {/* <DiseñoWeb /> */}
 
       <Contactar />

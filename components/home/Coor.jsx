@@ -90,7 +90,7 @@ function Coor() {
         {coordinadores.map((member, index) => (
           <div key={index} className="coordination-item">
             <div className="coordination-image-wrapper">
-              <Image
+              <img
                 src={Cara1}
                 alt={`Foto de ${member.name}`}
                 className="coordination-image"
@@ -111,7 +111,7 @@ function Coor() {
         {admisores.map((member, index) => (
           <div key={index} className="coordination-item">
             <div className="coordination-image-wrapper">
-              <Image
+              <img
                 src={Cara1}
                 alt={`Foto de ${member.name}`}
                 className="coordination-image"

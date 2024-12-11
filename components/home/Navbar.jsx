@@ -79,10 +79,10 @@ const NavBar = () => {
             <a title="Servicios" href="/capacitaciones">
               Capacitaciones
             </a>
-            <a title=" Diseño Web" href="/contenido">
+            <a title=" Diseño Web" href="#">
               Contenido
             </a>
-            <a title="Contacto" href="/contacto">
+            <a title="Contacto" href="/#contacto">
               Contacto
             </a>{" "}
             <a v title="opiniones" href="/terapia">
@@ -109,10 +109,10 @@ const NavBar = () => {
             <a onClick={handleClick} title=" Diseño Web" href="/contenido">
               Contenido
             </a>
-            <a onClick={handleClick} title="Contacto" href="/contacto">
+            <a onClick={handleClick} title="Contacto" href="/#contacto">
               Contacto
             </a>{" "}
-            <a onClick={handleClick} v title="opiniones" href="/terapia">
+            <a onClick={handleClick} title="opiniones" href="/terapia">
               Empezar terapia
             </a>
           </div>

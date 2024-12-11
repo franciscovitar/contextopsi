@@ -2,7 +2,7 @@
     padding: 100px 50px 200px;
     width: 100%;
     margin: 0 auto;
-    background: #ededed99;
+    // background: #ededed99;
     text-align: center;
 
     @media (max-width:500px) {
@@ -62,7 +62,13 @@
             background-color: #fff;
             padding: 20px;
             box-shadow: 0px 0px 10px #1111111a;
-            // border-radius: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                // transition: all 1s ease;
+                box-shadow: 0px 6px 12px rgba(178, 142, 232, 0.5);
+            }
 
             .npmyest {
                 padding: 0px;
