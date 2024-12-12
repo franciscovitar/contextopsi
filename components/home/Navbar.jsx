@@ -79,7 +79,7 @@ const NavBar = () => {
             <a title="Servicios" href="/capacitaciones">
               Capacitaciones
             </a>
-            <a title=" Diseño Web" href="#">
+            <a title=" Diseño Web" href="/contenido">
               Contenido
             </a>
             <a title="Contacto" href="/#contacto">
@@ -112,7 +112,12 @@ const NavBar = () => {
             <a onClick={handleClick} title="Contacto" href="/#contacto">
               Contacto
             </a>{" "}
-            <a onClick={handleClick} title="opiniones" href="/terapia">
+            <a
+              onClick={handleClick}
+              className="terapy"
+              title="opiniones"
+              href="/terapia"
+            >
               Empezar terapia
             </a>
           </div>

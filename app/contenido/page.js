@@ -1,5 +1,6 @@
 import BotonFlotante from "@/components/home/BotonFlotante";
 import Contactar from "@/components/home/Contacto";
+import Contenido from "@/components/home/Contenido";
 import Cursos from "@/components/home/Cursos";
 import DiseñoWeb from "@/components/home/DiseñoWeb";
 import Footer from "@/components/home/Footer";
@@ -18,7 +19,7 @@ export default function Home() {
 
       {/* <Cursos /> */}
       {/* <DiseñoWeb /> */}
-
+      <Contenido />
       <Contactar />
       {/* <BotonFlotante /> */}
       <Footer />
