@@ -58,7 +58,11 @@ function Nosotros() {
             el valor del trabajo en Salud Mental.
           </motion.p>
 
-          <motion.a {...tittleVariants} target="blank" href="#contacto">
+          <motion.a
+            {...tittleVariants}
+            target="blank"
+            href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+          >
             Contáctanos
           </motion.a>
         </div>

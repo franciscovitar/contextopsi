@@ -38,7 +38,10 @@ function HomeWelcome({ hola }) {
           <motion.a title="quienes somos" href="#nosotros" {...linkVariants}>
             ¿Quiénes somos?
           </motion.a>
-          <motion.a href="#contacto" {...linkVariants}>
+          <motion.a
+            href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+            {...linkVariants}
+          >
             Solicitar consulta
           </motion.a>
         </div>

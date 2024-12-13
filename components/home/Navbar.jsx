@@ -76,8 +76,26 @@ const NavBar = () => {
             <a title="Nosotros" href="/#nosotros">
               Nosotrxs
             </a>
-            <a title="Servicios" href="/capacitaciones">
-              Capacitaciones
+            <a className="dropdown" title="Servicios">
+              Capacitaciones <i class="bi bi-chevron-down"></i>
+              <div className="dropdown-menu">
+                <a
+                  title="Ciclo de Charlas"
+                  href="https://docs.google.com/forms/d/1hhP1XALn1kpbQyZnzURhAFM0rAEPmKCqlgaNFcQxHBw/viewform?edit_requested=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ciclo de Charlas
+                </a>
+                <a
+                  title="Curso de Inicios"
+                  href="https://docs.google.com/forms/d/1jUShRaffa0ukAjgHzvyS-llKJVqCGot5_8rwij8tZw8/viewform?edit_requested=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Curso de Inicios
+                </a>
+              </div>
             </a>
             <a title=" Diseño Web" href="/contenido">
               Contenido
@@ -85,7 +103,11 @@ const NavBar = () => {
             <a title="Contacto" href="/#contacto">
               Contacto
             </a>{" "}
-            <a v title="opiniones" href="/terapia">
+            <a
+              className="terapy"
+              title="opiniones"
+              href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+            >
               Empezar terapia
             </a>
           </div>
@@ -103,8 +125,26 @@ const NavBar = () => {
             <a onClick={handleClick} title="Nosotros" href="/#nosotros">
               Nosotrxs
             </a>
-            <a onClick={handleClick} title="Servicios" href="/capacitaciones">
-              Capacitaciones
+            <a className="dropdown" title="Servicios">
+              Capacitaciones <i class="bi bi-chevron-down"></i>
+              <div className="dropdown-menu">
+                <a
+                  title="Ciclo de Charlas"
+                  href="https://docs.google.com/forms/d/1hhP1XALn1kpbQyZnzURhAFM0rAEPmKCqlgaNFcQxHBw/viewform?edit_requested=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ciclo de Charlas
+                </a>
+                <a
+                  title="Curso de Inicios"
+                  href="https://docs.google.com/forms/d/1jUShRaffa0ukAjgHzvyS-llKJVqCGot5_8rwij8tZw8/viewform?edit_requested=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Curso de Inicios
+                </a>
+              </div>
             </a>
             <a onClick={handleClick} title=" Diseño Web" href="/contenido">
               Contenido
@@ -116,7 +156,7 @@ const NavBar = () => {
               onClick={handleClick}
               className="terapy"
               title="opiniones"
-              href="/terapia"
+              href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
             >
               Empezar terapia
             </a>

@@ -30,7 +30,7 @@ function Imagen() {
     <div id="desarrollo" className="contenedor-principal-demo2">
       <div className="contenedor-secundario">
         <motion.h2 viewport={{ once: true }} {...headingVariants}>
-          Visita nuestros videos posteados en C5N
+          Mira nuestros videos psicoeducativos de C5N
         </motion.h2>
 
         <a

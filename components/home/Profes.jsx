@@ -54,6 +54,9 @@ const professionals = [
   { name: "Lic. Facundo Lezzi", number: "M.N. 76480" },
   { name: "Lic. Noemí Iglesias", number: "M.N. 67901" },
   { name: "Lic. Florencia Inchauspe", number: "M.N. 66484" },
+];
+
+const professionals2 = [
   { name: "Lic. Bárbara Ini", number: "M.N. 70215" },
   { name: "Lic. Camila Larocca", number: "M.N. 72753" },
   { name: "Lic. Lucila Lavagnino", number: "M.N. 78314" },
@@ -102,6 +105,16 @@ function Profesionales() {
 
       <Slider className="elSlider" {...settings}>
         {professionals.map((professional, index) => (
+          <div key={index} className="profesional">
+            <div className="card">
+              <p className="name">{professional.name}</p>
+              <p className="number">{professional.number}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
+      <Slider className="elSlider" {...settings}>
+        {professionals2.map((professional, index) => (
           <div key={index} className="profesional">
             <div className="card">
               <p className="name">{professional.name}</p>

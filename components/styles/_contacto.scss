@@ -58,6 +58,7 @@
                 margin: 1px;
                 text-align: center;
                 display: flex;
+                padding: 0 20px;
                 flex-direction: column;
                 border-radius: 10px;
                 justify-content: center;
@@ -84,6 +85,7 @@
                     object-fit: contain;
                     border-radius: 10px;
                     margin-bottom: 10px;
+
                 }
 
                 h5 {
@@ -95,7 +97,7 @@
                 a {
                     color: #000;
                     text-decoration: none;
-                    width: 80%;
+                    width: 100%;
                     font-size: 15px;
                     font-weight: 400;
                     // color: rgb(71, 83, 110);

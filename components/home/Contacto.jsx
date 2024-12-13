@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import Form from "../../Images/form.png";
+import Redes from "../../Images/media_social_networks_community_online_forum_interest_groups_icon_260996.png";
 import Cafe from "../../Images/cafecito.png";
 import Image from "next/image";
 
@@ -102,16 +103,19 @@ function Contacto() {
               </a>
             </motion.div>
             <motion.div {...paragraphVariants}>
-              <i className="bi bi-instagram"></i>
-              <a href="https://www.instagram.com/contexto.psi">
-                Seguinos en Instagram: @contexto.psi
-              </a>
+              <Image src={Redes} />
+              <p>
+                @contexto.psi en{" "}
+                <a href="https://www.instagram.com/contexto.psi">Instagram </a>y{" "}
+                <a href="https://www.facebook.com/profile.php?id=100063685473728">
+                  {" "}
+                  Facebook
+                </a>
+              </p>
             </motion.div>
             <motion.div {...paragraphVariants}>
               <Image src={Form} />
-              <a href="https://www.facebook.com/profile.php?id=100063685473728">
-                Seguinos en Facebook
-              </a>
+              <a>equipo.contextopsi@gmail.com</a>
             </motion.div>
           </div>
         </div>

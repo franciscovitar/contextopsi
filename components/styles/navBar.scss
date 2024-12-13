@@ -109,6 +109,44 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                     display: none;
                 }
 
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+
+                    .dropdown-menu {
+                        display: none; // Oculto por defecto
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: #ffffff; // Fondo blanco
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra
+                        // border-radius: 4px;
+                        z-index: 100;
+                        padding: 10px 0;
+                        border-radius: 20px;
+
+                        a {
+                            display: block;
+                            padding: 10px 20px;
+                            color: #333333;
+                            text-decoration: none;
+                            font-size: 16px;
+                            transition: background-color 0.3s ease;
+                            border-radius: 20px;
+
+                            &:hover {
+                                color: #fff;
+                                background-color: #00e49484
+                            }
+                        }
+                    }
+
+                    &:hover .dropdown-menu {
+                        display: block; // Mostrar menú al pasar el cursor
+                    }
+                }
+
                 a {
                     text-decoration: none;
                     font-size: 18px;
@@ -122,8 +160,8 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                     }
                 }
 
-                a:last-child {
-                    background: linear-gradient(135deg, $color1, $color2);
+                .terapy {
+                    background: #00E496;
                     color: white;
                     font-weight: bold;
                     padding: 10px 20px;
@@ -133,6 +171,7 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                     text-align: center;
 
                     &:hover {
+                        color: #fff;
                         // background: linear-gradient(135deg, lighten($color1, 10%), lighten($color2, 10%));
                         box-shadow: 0px 6px 12px rgba(178, 142, 232, 0.5);
                     }
@@ -201,6 +240,44 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                 padding: 0 50px;
             }
 
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+
+                .dropdown-menu {
+                    display: none; // Oculto por defecto
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #ffffff; // Fondo blanco
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra
+                    // border-radius: 4px;
+                    z-index: 100;
+                    padding: 10px 0;
+                    border-radius: 20px;
+
+                    a {
+                        display: block;
+                        padding: 10px 20px;
+                        color: #333333;
+                        text-decoration: none;
+                        font-size: 16px;
+                        transition: background-color 0.3s ease;
+                        border-radius: 20px;
+
+                        &:hover {
+                            color: #fff;
+                            background-color: #00e49484
+                        }
+                    }
+                }
+
+                &:hover .dropdown-menu {
+                    display: block; // Mostrar menú al pasar el cursor
+                }
+            }
+
             a {
                 color: #000000;
                 text-decoration: none;
@@ -215,7 +292,7 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
             }
 
             .terapy {
-                background: linear-gradient(135deg, $color1, $color2);
+                background: #00E496;
                 color: white;
                 font-weight: bold;
                 padding: 10px 20px;
