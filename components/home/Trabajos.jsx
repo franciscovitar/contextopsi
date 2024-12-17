@@ -5,6 +5,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import Slider from "react-slick";
+import { CustomNextArrow } from "./CustomNextArrow";
+import { CustomPrevArrow } from "./CustomPrevArrow";
 
 const lineVariants = {
   viewport: { once: true },
@@ -20,6 +22,8 @@ const settings = {
   initialSlide: 1,
   autoplay: true,
   autoplaySpeed: 3000,
+  prevArrow: <CustomPrevArrow />,
+  nextArrow: <CustomNextArrow />,
   responsive: [
     {
       breakpoint: 1700,

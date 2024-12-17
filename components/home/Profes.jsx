@@ -4,6 +4,8 @@ import React from "react";
 import "../styles/_profes.scss";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { CustomNextArrow } from "./CustomNextArrow";
+import { CustomPrevArrow } from "./CustomPrevArrow";
 
 const lineVariants = {
   viewport: { once: true },
@@ -18,6 +20,8 @@ const settings = {
   slidesToScroll: 2,
   autoplay: true,
   autoplaySpeed: 2000,
+  prevArrow: <CustomPrevArrow />,
+  nextArrow: <CustomNextArrow />,
   responsive: [
     {
       breakpoint: 1400,
