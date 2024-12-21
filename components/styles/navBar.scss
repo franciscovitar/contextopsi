@@ -72,8 +72,8 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
 
                         @media (max-width: 600px) {
                             transition: all 1s ease;
-                            width: 100px;
-                            height: 100px;
+                            width: 80px;
+                            height: 80px;
                             margin: 0;
                         }
                     }
@@ -113,6 +113,11 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                     position: relative;
                     display: inline-block;
                     cursor: pointer;
+
+                    i {
+                        display: inline-block;
+                        font-size: 15px;
+                    }
 
                     .dropdown-menu {
                         display: none; // Oculto por defecto
@@ -234,7 +239,7 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
             height: 100vh;
             justify-content: center;
             align-items: center;
-            padding: 0 50px;
+            padding: 0 10px;
             gap: 20px;
             text-align: center;
 
