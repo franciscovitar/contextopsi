@@ -2,47 +2,39 @@
 
 import "../styles/_imagen.scss";
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
-// Constantes para efectos de Framer Motion
-const headingVariants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0 } },
-};
-
-const subheadingVariants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
-
-const buttonVariants = {
-  initial: { opacity: 0, scale: 0 },
-  whileInView: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.8, delay: 0.4 },
-  },
+// Constantes de animación
+const animationVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 function Imagen() {
   return (
-    <div id="desarrollo" className="contenedor-principal-demo2">
+    <section id="desarrollo" className="contenedor-principal-demo2">
       <div className="contenedor-secundario">
-        <motion.h2 viewport={{ once: true }} {...headingVariants}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={animationVariants}
+        >
           Mira nuestros videos psicoeducativos de C5N
         </motion.h2>
-
-        <a
-          target="blank"
+        <motion.a
           href="https://www.youtube.com/watch?v=mkP1JsX6plA&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
+          target="_blank"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={animationVariants}
+          transition={{ delay: 0.2 }}
         >
-          <motion.button {...buttonVariants} viewport={{ once: true }}>
-            Ver Playlist
-          </motion.button>
-        </a>
+          <button>Ver Playlist</button>
+        </motion.a>
       </div>
-    </div>
+    </section>
   );
 }
 

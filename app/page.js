@@ -20,7 +20,7 @@ export default function Home() {
       <Coor />
       <Profes />
       <Imagen />
-      <Trabajos />
+      {/* <Trabajos /> */}
       <Contactar />
       {/* <BotonFlotante /> */}
       <Footer />

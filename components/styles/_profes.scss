@@ -1,13 +1,18 @@
 .contenedor-principal-Profesionales {
-    padding: 200px 50px;
+    padding: 125px 50px;
     // background: linear-gradient(135deg, #b28ee8, #ededed99);
     text-align: center;
 
     .titulo {
-        font-size: 32px;
-        font-weight: 700;
+        font-size: 40px;
+        font-weight: 600;
         color: #b28ee8;
         ;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+        }
 
         // .line {
         //     background: #b28ee8;

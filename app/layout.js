@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -6,9 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ToastProvider from "@/providers/toast-provider";
 
-const inter = Poppins({
+const inter = Quicksand({
   subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "600", "700", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
