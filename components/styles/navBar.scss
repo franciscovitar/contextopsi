@@ -264,14 +264,14 @@ $highlight-hover: lighten($color1, 10%); // Hover más claro
                     // border-radius: 4px;
                     z-index: 100;
                     padding: 10px 0;
-                    border-radius: 20px;
+                    border-radius: 10px;
 
                     a {
                         display: block;
                         padding: 10px 20px;
                         color: #333333;
                         text-decoration: none;
-                        font-size: 16px;
+                        font-size: 13px;
                         transition: background-color 0.3s ease;
                         border-radius: 20px;
 
