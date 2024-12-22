@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import Nos from "../../Images/nosotros.jpg";
 import "../styles/_diseñoWeb.scss";
 import { motion } from "framer-motion";
 
@@ -22,23 +20,10 @@ const lineVariants = {
   whileInView: { width: 60, transition: { duration: 0.5, delay: 0.5 } },
 };
 
-const imageVariants = {
-  initial: { scale: 0.8, opacity: 0 },
-  whileInView: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 1 },
-  },
-  viewport: { once: true },
-};
-
 function Nosotros() {
   return (
     <div id="nosotros" className="nos-container">
       <div className="fila">
-        <motion.div {...imageVariants} className="imagen">
-          <Image alt="Nosotros" title="Nosotros" src={Nos}></Image>
-        </motion.div>
         <div className="texto">
           <motion.h2 {...tittleVariants}>¿Quiénes somos?</motion.h2>
           <motion.div {...lineVariants} className="line"></motion.div>
