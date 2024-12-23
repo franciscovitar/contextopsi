@@ -23,7 +23,7 @@ function Imagen() {
           Mira nuestros videos psicoeducativos de C5N
         </motion.h2>
         <motion.a
-          href="https://www.youtube.com/watch?v=mkP1JsX6plA&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
+          href="https://www.youtube.com/watch?v=_2ncZBjns-o&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
           target="_blank"
           initial="hidden"
           whileInView="visible"

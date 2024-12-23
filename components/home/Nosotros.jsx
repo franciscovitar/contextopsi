@@ -29,18 +29,18 @@ function Nosotros() {
           <motion.div {...lineVariants} className="line"></motion.div>
           <motion.p {...tittleVariants}>
             Somos un equipo de profesionales de la <strong>salud mental</strong>{" "}
-            con perspectiva de género y de derechos. Brindamos{" "}
-            <strong>atención psicoterapéutica</strong> para todas las edades.
-            Hacemos contenidos y capacitaciones sobre salud mental.
+            con perspectiva de <strong>género</strong> y de derechos, conformado
+            por psicólogxs de distintas corrientes teóricas, psiquiatras y
+            nutricionistas.
+            <br /> Construimos una red de atención psicológica integral que
+            reivindica el trabajo interdisciplinario y la formación continua.
             <br />
-            Brindamos atención presencial en{" "}
-            <strong>Buenos Aires, Argentina</strong>, y virtual en todo el
-            mundo.
-            <br />
-            Hablamos y educamos sobre Salud Mental a través de distintos medios
-            y plataformas. Construimos una{" "}
-            <strong>red de atención psicológica integral</strong>, reivindicando
-            el valor del trabajo en Salud Mental.
+            Brindamos atención psicoterapéutica para todas las edades:{" "}
+            <strong>presencial</strong> en <strong>Bs. As., Argentina</strong>,
+            y <strong>virtual</strong> en todo el mundo. <br />
+            Hacemos contenidos a través de distintos medios y plataformas y
+            dictamos <strong>capacitaciones</strong> sobre salud mental y género
+            para profesionales de la salud y diversas instituciones.
           </motion.p>
 
           <motion.a
