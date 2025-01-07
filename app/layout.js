@@ -30,7 +30,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="canonical" href="https://www.contextopsi.com.ar/" />
+        <meta
+          name="google-site-verification"
+          content="tXvxNaotVebTLTGxkRpbWFg9X2UG8QyQ7VTjIAtuVhk"
+        />
+      </head>
       <body translate="no" className={inter.className}>
         <ToastProvider />
         {children}
