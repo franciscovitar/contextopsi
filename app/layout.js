@@ -36,6 +36,10 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="tXvxNaotVebTLTGxkRpbWFg9X2UG8QyQ7VTjIAtuVhk"
         />
+        <meta
+          name="google-site-verification"
+          content="sogKM6F3fY7Uu74dMm2pov93awShuAMhX1BxEV0PFDQ"
+        />
       </head>
       <body translate="no" className={inter.className}>
         <ToastProvider />
