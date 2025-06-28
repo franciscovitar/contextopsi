@@ -81,7 +81,7 @@ const NavBar = () => {
               <div className="dropdown-menu">
                 <a
                   title="Ciclo de Charlas"
-                  href="https://docs.google.com/forms/d/1hhP1XALn1kpbQyZnzURhAFM0rAEPmKCqlgaNFcQxHBw/viewform?edit_requested=true"
+                  href="https://forms.gle/WuK7grmzhpRY7feD7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -130,7 +130,7 @@ const NavBar = () => {
               <div className="dropdown-menu">
                 <a
                   title="Ciclo de Charlas"
-                  href="https://docs.google.com/forms/d/1hhP1XALn1kpbQyZnzURhAFM0rAEPmKCqlgaNFcQxHBw/viewform?edit_requested=true"
+                  href="https://forms.gle/WuK7grmzhpRY7feD7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
