@@ -36,7 +36,6 @@ const settings = {
 
 const professionals = [
   { name: "Lic. Florencia Alvarez", number: "M.N. 76412" },
-  { name: "Lic. Melina Alvite", number: "M.N. 68498" },
   { name: "Lic. Luciana Arcastti", number: "M.N. 70106" },
   { name: "Lic. Malén Arinovich", number: "M.N. 68399" },
   { name: "Lic. Julieta Arriola", number: "M.N. 65610" },
@@ -46,18 +45,20 @@ const professionals = [
   { name: "Lic. Rocío Díaz", number: "M.P. 14758" },
   { name: "Lic. Mariana Fanello", number: "M.N. 68349" },
   { name: "Lic. Ayelén Figueroa", number: "M.N. 78373" },
-  { name: "Lic. Jesuana Flores", number: "M.N. 44466" },
   { name: "Lic. Silvia Ferreyra", number: "M.N. 55280" },
-  { name: "Lic. Romina Fontanella", number: "M.N. 66563" },
-  { name: "Lic. Daiana Gherscovici", number: "M.N. 70180" },
   { name: "Lic. Jazmín Groszmann", number: "M.N. 76435" },
   { name: "Lic. Jimena Guerrero", number: "M.N. 62708" },
   { name: "Lic. Gisel Hansen", number: "M.N. 64816" },
   { name: "Lic. Vanesa Hernández", number: "M.N. 70059" },
   { name: "Lic. Francisco Herzberg", number: "M.N. 64321" },
   { name: "Lic. Facundo Lezzi", number: "M.N. 76480" },
-  { name: "Lic. Noemí Iglesias", number: "M.N. 67901" },
   { name: "Lic. Florencia Inchauspe", number: "M.N. 66484" },
+
+  // Nuevos profesionales agregados
+  { name: "Lic. Luciana Salazar", number: "M.P. 68763" },
+  { name: "Lic. Camila Gonzalez", number: "M.P. 77405" },
+  { name: "Lic. Daniela Ledesma Novaro", number: "M.P. 77331" },
+  { name: "Lic. Camila Lara", number: "M.P. 80058" },
 ];
 
 const professionals2 = [
@@ -75,10 +76,7 @@ const professionals2 = [
   { name: "Lic. Julieta Rosenzvit", number: "M.N. 69903" },
   { name: "Lic. Josefina Rueda", number: "M.N. 74790" },
   { name: "Lic. Sofía Segal", number: "M.N. 82002" },
-  { name: "Lic. Florencia Sosa", number: "M.N. 68380" },
   { name: "Lic. Patricia Sosa", number: "M.N. 70123" },
-  { name: "Lic. Marcos Speranza", number: "M.N. 70123" },
-  { name: "Lic. Vico Tela", number: "M.N. 75564" },
   { name: "Dra. Mariana Cabanillas", number: "M.N. 149494" },
   { name: "Dra. Alicia de Marchi", number: "M.N. 179772" },
   { name: "Dra. Lucía Nosiglia", number: "M.N. 163217" },
