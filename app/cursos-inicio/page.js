@@ -1,17 +1,14 @@
 import Contactar from "@/components/home/Contacto";
-import Coor from "@/components/home/Coor";
 import Footer from "@/components/home/Footer";
-import HomeWelcome from "@/components/home/HomeWelcome";
 import NavBar from "@/components/home/Navbar";
+import CursoInicios from "@/components/home/CursoInicios";
 
-import Profes from "@/components/home/Profes";
 export default function Home() {
   return (
     <main className="main">
       <NavBar />
-      <HomeWelcome hola={""} />
-      <Coor />
-      <Profes />
+      {/* <HomeWelcome hola={"3"} />s */}
+      <CursoInicios />
       <Contactar />
       <Footer />
     </main>

@@ -31,37 +31,34 @@ const NavBar = () => {
   };
 
   const changeBg = () => {
-    if (window.scrollY > 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
+    if (window.scrollY > 80) setNavbar(true);
+    else setNavbar(false);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBg);
-    return () => {
-      window.removeEventListener("scroll", changeBg);
-    };
+    return () => window.removeEventListener("scroll", changeBg);
   }, []);
 
   return (
     <nav className={navbar ? "navbar-container1" : "navbar-container2"}>
       <div className={navbar ? "navbar-bg" : "navbar-nobg"}>
+        {/* ---------- Logo ---------- */}
         <div className="left">
           <motion.div className="logo" {...textVariants}>
-            <Link href="/">
-              <div className="logo-banderas">
-                <Image
-                  className="logo_time"
-                  src={Logo}
-                  alt="Logo"
-                  title="Logo"
-                />
-              </div>
+            <Link href="/" className="logo-banderas">
+              <Image
+                className="logo_time"
+                src={Logo}
+                alt="Logo"
+                title="Logo"
+                priority
+              />
             </Link>
           </motion.div>
         </div>
+
+        {/* ---------- Links Desktop ---------- */}
         <motion.div
           className="right"
           viewport={{ once: true }}
@@ -73,90 +70,125 @@ const NavBar = () => {
           }}
         >
           <div className="links">
-            <a title="Nosotros" href="/#nosotros">
-              Nosotrxs
-            </a>
-            <a className="dropdown" title="Servicios">
-              Capacitaciones <i class="bi bi-chevron-down"></i>
+            <Link href="/#Inicio" title="Nosotros">
+              Inicio
+            </Link>
+            {/* <Link href="/capacitaciones" title="Capacitaciones">
+              Capacitaciones
+            </Link> */}
+
+            <div className="dropdown" title="Capacitaciones">
+              <span>
+                Capacitaciones <i className="bi bi-chevron-down"></i>
+              </span>
               <div className="dropdown-menu">
-                <a
-                  title="Ciclo de Charlas"
-                  href="https://forms.gle/WuK7grmzhpRY7feD7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/cursos-inicio" title="Inicios">
+                  Curso de Inicios
+                </Link>
+                <a title="Charlas" href="ciclo-charlas">
                   Ciclo de Charlas
                 </a>
+              </div>
+            </div>
+
+            <div className="dropdown" title="Contenido">
+              <span>
+                Contenido <i className="bi bi-chevron-down"></i>
+              </span>
+              <div className="dropdown-menu">
+                <Link href="/contenido" title="Publicaciones">
+                  Publicaciones
+                </Link>
                 <a
-                  title="Curso de Inicios"
-                  href="https://docs.google.com/forms/d/1jUShRaffa0ukAjgHzvyS-llKJVqCGot5_8rwij8tZw8/viewform?edit_requested=true"
+                  title="Videos"
+                  href="https://www.youtube.com/watch?v=_2ncZBjns-o&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Curso de Inicios
+                  Videos
                 </a>
               </div>
-            </a>
-            <a title=" Diseño Web" href="/contenido">
-              Contenido
-            </a>
-            <a title="Contacto" href="/#contacto">
+            </div>
+
+            <Link href="/contacto" title="Contacto">
               Contacto
-            </a>{" "}
+            </Link>
+
             <a
               className="terapy"
               title="opiniones"
               href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Empezar terapia
             </a>
           </div>
+
+          {/* ---------- Icono Hamburguesa ---------- */}
           <i
             type="button"
             onClick={handleClick}
-            className={`bi  ${clicked ? "bi-x" : "bi-list"}`}
+            className={`hamburguesa bi ${clicked ? "bi-x" : "bi-list"}`}
           ></i>
         </motion.div>
+
+        {/* ---------- Menu Móvil ---------- */}
         <div ref={bgDiv} className="bg-div">
           <div ref={linksActive} className="links-active">
-            <a onClick={handleClick} title="Inicio" href="/#inicio">
+            <Link onClick={handleClick} href="/#Inicio" title="Inicio">
               Inicio
-            </a>
-            <a onClick={handleClick} title="Nosotros" href="/#nosotros">
-              Nosotrxs
-            </a>
-            <a className="dropdown" title="Servicios">
-              Capacitaciones <i class="bi bi-chevron-down"></i>
+            </Link>
+            {/* <Link
+              onClick={handleClick}
+              href="/capacitaciones"
+              title="Servicios"
+            >
+              Capacitaciones
+            </Link> */}
+
+            <div className="dropdown" title="Capacitaciones">
+              <span>
+                Capacitaciones <i className="bi bi-chevron-down"></i>
+              </span>
               <div className="dropdown-menu">
-                <a
-                  title="Ciclo de Charlas"
-                  href="https://forms.gle/WuK7grmzhpRY7feD7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/cursos-inicio" title="cursos">
+                  Curso de Inicios
+                </Link>
+                <a title="Ciclo" href="ciclo-charlas">
                   Ciclo de Charlas
                 </a>
+              </div>
+            </div>
+
+            <div className="dropdown" title="Contenido">
+              <span>
+                Contenido <i className="bi bi-chevron-down"></i>
+              </span>
+              <div className="dropdown-menu">
+                <Link href="/contenido" title="Publicaciones">
+                  Publicaciones
+                </Link>
                 <a
-                  title="Curso de Inicios"
-                  href="https://docs.google.com/forms/d/1jUShRaffa0ukAjgHzvyS-llKJVqCGot5_8rwij8tZw8/viewform?edit_requested=true"
+                  title="Videos"
+                  href="https://www.youtube.com/watch?v=_2ncZBjns-o&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Curso de Inicios
+                  Videos
                 </a>
               </div>
-            </a>
-            <a onClick={handleClick} title=" Diseño Web" href="/contenido">
-              Contenido
-            </a>
-            <a onClick={handleClick} title="Contacto" href="/#contacto">
+            </div>
+            <Link onClick={handleClick} href="/#contacto" title="Contacto">
               Contacto
-            </a>{" "}
+            </Link>
+
             <a
-              onClick={handleClick}
               className="terapy"
               title="opiniones"
               href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Empezar terapia
             </a>

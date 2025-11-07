@@ -1,14 +1,12 @@
-import Contactar from "@/components/home/Contacto";
-import Contenido from "@/components/home/Contenido";
 import Footer from "@/components/home/Footer";
+import FormContacto from "@/components/home/FormContacto";
 import NavBar from "@/components/home/Navbar";
 
 export default function Home() {
   return (
     <main className="main">
       <NavBar />
-      <Contenido />
-      <Contactar />
+      <FormContacto />
       <Footer />
     </main>
   );

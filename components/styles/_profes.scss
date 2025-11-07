@@ -1,70 +1,155 @@
+$violeta: #b28ee8;
+$violeta-hover: lighten($violeta, 7%);
+$pastel: #f7f5fa;
+$texto: #2a2a2a;
+$sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.05);
+
 .contenedor-principal-Profesionales {
-    padding: 125px 50px;
-    // background: linear-gradient(135deg, #b28ee8, #ededed99);
+    background: $pastel;
+    padding: 100px 40px;
     text-align: center;
 
+    @media (max-width: 768px) {
+        padding: 70px 20px;
+    }
+
     .titulo {
-        font-size: 40px;
-        font-weight: 600;
-        color: #b28ee8;
-        ;
+        color: $violeta;
+        margin-bottom: 2rem;
 
         h2 {
-            font-size: 40px;
-            font-weight: 600;
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.8rem;
+            text-transform: none;
 
             @media (max-width: 500px) {
-                font-size: 30px;
+                font-size: 1.8rem;
             }
         }
 
-        // .line {
-        //     background: #b28ee8;
-        //     height: 4px;
-        //     width: 70px;
-        //     margin: auto;
-        // }
+        .line {
+            height: 4px;
+            width: 70px;
+            margin: 0 auto;
+            background: $violeta;
+            border-radius: 2px;
+        }
     }
 
+    /* Slider principal */
     .elSlider {
-        margin: 50px auto;
+        margin: 3rem auto;
         width: 90%;
+
+        .slick-slide {
+            display: flex !important;
+            justify-content: center;
+        }
 
         .profesional {
             display: flex;
             justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
 
             .card {
-                margin: 5px;
                 background: #fff;
-                border: none;
-                height: 100px;
-                // width: 100px;
-                padding: 5px;
                 border-radius: 15px;
-                box-shadow: 0 4px 20px rgba(167, 167, 167, 0.1);
-                text-align: center;
-                transition: transform 0.3s ease;
-
-
+                box-shadow: $sombra-suave;
+                padding: 1rem;
+                width: 160px;
+                height: 110px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: all 0.35s ease;
+                cursor: default;
 
                 &:hover {
-                    transform: scale(1.05);
-                    // box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+                    transform: translateY(-4px);
+                    box-shadow: 0 6px 25px rgba($violeta, 0.25);
                 }
 
                 .name {
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: #b28ee8;
-                    margin-bottom: 5px;
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    color: $violeta;
+                    margin-bottom: 0.2rem;
+                    line-height: 1.2;
                 }
 
                 .number {
-                    font-size: 16px;
-                    color: #9F95B6;
+                    font-size: 0.9rem;
+                    color: #888;
                 }
             }
+        }
+    }
+
+    /* Botones personalizados (si querés mantenerlos coherentes) */
+    .slick-prev,
+    .slick-next {
+        color: $violeta !important;
+        z-index: 2;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $violeta-hover !important;
+            transform: scale(1.1);
+        }
+    }
+
+    /* Dots opcionales si se activan */
+    .slick-dots li button:before {
+        color: $violeta !important;
+        opacity: 0.5;
+    }
+
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+    }
+
+    /* Responsivo */
+    @media (max-width: 1200px) {
+        .elSlider {
+            .card {
+                width: 140px;
+                height: 100px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .elSlider {
+            width: 95%;
+            margin: 2rem auto;
+
+            .card {
+                width: 90%;
+                max-width: 250px;
+                height: auto;
+            }
+
+            .name {
+                font-size: 1rem;
+            }
+
+            .number {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .titulo h2 {
+            font-size: 1.6rem;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 240px;
         }
     }
 }

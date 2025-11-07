@@ -1,0 +1,143 @@
+$violeta: #b28ee8;
+$violeta-hover: lighten($violeta, 10%);
+$pastel: #f7f5fa;
+$texto: #2a2a2a;
+
+.contact-section {
+    background-color: $pastel;
+    padding: 20rem 2rem 10rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 5rem;
+        max-width: 1100px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 3rem;
+        }
+
+        /* Columna izquierda */
+        .contact-info {
+            flex: 1;
+            max-width: 450px;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $violeta;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: $texto;
+                font-size: 1.05rem;
+                line-height: 1.7;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            /* Eliminamos la imagen */
+            .contact-image {
+                display: none;
+            }
+        }
+
+        /* Columna derecha (formulario) */
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 500px;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(178, 142, 232, 0.1);
+            border: 1px solid rgba(178, 142, 232, 0.15);
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 8px 30px rgba($violeta, 0.12);
+            }
+
+
+
+
+            input,
+            textarea {
+                border: 1px solid #e3e3e3;
+                border-radius: 8px;
+                padding: 0.9rem 1.2rem;
+                font-size: 1rem;
+                color: $texto;
+                font-family: inherit;
+                background-color: #fff;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: $violeta;
+                    box-shadow: 0 0 0 4px rgba($violeta, 0.15);
+                }
+            }
+
+            .form-row {
+                display: flex;
+                gap: 1rem;
+
+                input {
+                    flex: 1;
+                    border-radius: 8px; // menor radio para que los bordes coincidan visualmente
+                    height: 50px;
+                    width: 100%;
+                }
+
+                @media (max-width: 700px) {
+                    flex-direction: column;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+
+            textarea {
+                min-height: 130px;
+                resize: vertical;
+            }
+
+            button {
+                align-self: flex-start;
+                background: $violeta;
+                color: #fff;
+                border: none;
+                padding: 0.9rem 1.8rem;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0px 4px 10px rgba($violeta, 0.3);
+
+                &:hover {
+                    background: $violeta-hover;
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 900px) {
+                    align-self: center;
+                }
+            }
+        }
+    }
+}

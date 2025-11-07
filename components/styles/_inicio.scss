@@ -1,0 +1,208 @@
+$violeta: #b28ee8;
+$pastel: #f8f6fb;
+$texto: #333;
+
+.capacitaciones-section1 {
+    background-color: $pastel;
+    padding: 15rem 2rem 8rem;
+    display: flex;
+    justify-content: center;
+
+
+    @media (max-width: 768px) {
+        padding: 15rem 1rem 8rem;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+
+
+
+        h1 {
+            text-align: center;
+            color: $violeta;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+
+        .bloque {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 25px rgba(178, 142, 232, 0.08);
+            transition: all 0.3s ease;
+
+            h3 {
+                color: $texto;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: $texto;
+                line-height: 1.7;
+                margin-bottom: 1rem;
+                opacity: 0.9;
+            }
+
+            /* 🎯 Meme y banners */
+            .flyer {
+                margin: 2rem auto;
+                text-align: center;
+
+                img {
+                    width: 100%;
+                    max-width: 420px;
+                    border-radius: 16px;
+                    object-fit: contain;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 6px 18px rgba($violeta, 0.08);
+
+                    &:hover {
+                        transform: scale(1.02);
+                        box-shadow: 0 10px 25px rgba($violeta, 0.15);
+                    }
+                }
+            }
+
+            .banner-duo {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+                margin: 3rem 0;
+
+                .banner {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    object-fit: contain;
+                    box-shadow: 0 6px 18px rgba($violeta, 0.1);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.01);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .btn-primary {
+                display: inline-block;
+                background-color: $violeta;
+                color: #fff;
+                font-weight: 600;
+                padding: 0.9rem 1.8rem;
+                border-radius: 12px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba($violeta, 0.25);
+                margin-top: 1rem;
+
+                &:hover {
+                    background-color: lighten($violeta, 10%);
+                    transform: translateY(-2px);
+                }
+            }
+
+            .accordion {
+                margin-top: 2rem;
+
+                .accordion-item {
+                    border-bottom: 1px solid #e6e2f1;
+                    padding: 0 20px;
+
+                    &:hover {
+                        color: $violeta;
+                        background-color: rgba(178, 142, 232, 0.05);
+                    }
+
+                    .accordion-title {
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        text-align: left;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        padding: 1rem 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        cursor: pointer;
+                        color: $texto;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            color: $violeta;
+
+                        }
+
+                        &.active {
+                            color: $violeta;
+                        }
+
+                        span {
+                            margin-left: 5px;
+                            font-size: 1.4rem;
+                            color: $violeta;
+                        }
+                    }
+
+                    .accordion-content {
+                        padding: 0.5rem 0 1rem;
+                        color: #555;
+
+                        p {
+                            margin: 0;
+                            white-space: pre-line;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .bloque {
+                padding: 2rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                .flyer img {
+                    max-width: 100%;
+                }
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+
+.info-extra {
+    margin-top: 2rem;
+    color: #555;
+    font-size: 1rem;
+    text-align: center;
+
+    a {
+        color: $violeta;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 768px) {
+        text-align: left;
+    }
+}
