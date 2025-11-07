@@ -179,7 +179,7 @@ const NavBar = () => {
                 </a>
               </div>
             </div>
-            <Link onClick={handleClick} href="/#contacto" title="Contacto">
+            <Link onClick={handleClick} href="/contacto" title="Contacto">
               Contacto
             </Link>
 
