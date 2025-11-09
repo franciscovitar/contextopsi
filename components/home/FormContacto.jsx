@@ -1,60 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import "../styles/_formContacto.scss";
-import FotoContacto from "../../Images/sitioweb.jpg"; // reemplazá con tu imagen real
+import FotoContacto from "../../Images/sitioweb.jpg";
 
 const FormContacto = () => {
-  const [nombre, setNombre] = useState("");
-  const [mail, setMail] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [consulta, setConsulta] = useState("");
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
 
-  const sendEmail = () => {
-    const form = document.createElement("form");
-    form.innerHTML = `
-      <input type="hidden" name="nombre" value="${nombre}">
-      <input type="hidden" name="telefono" value="${telefono}">
-      <input type="hidden" name="mail" value="${mail}">
-      <input type="hidden" name="consulta" value="${consulta}">
-    `;
-    document.body.appendChild(form);
-
-    emailjs
-      .sendForm(
-        "service_05h883d",
-        "template_vkexfrm",
-        form,
-        "E6hTZwuGCAOTz2q0h"
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
-
-    document.body.removeChild(form);
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    if (!consulta || !telefono || !mail || !nombre) {
-      toast.error("Por favor completa todos los campos requeridos.");
+
+    const formData = new FormData(form.current);
+    const nombre = formData.get("nombre");
+    const telefono = formData.get("telefono");
+    const mail = formData.get("mail");
+    const consulta = formData.get("consulta");
+
+    if (!nombre || !telefono || !mail || !consulta) {
+      toast.error("Por favor completá todos los campos requeridos.");
       return;
     }
 
-    sendEmail();
-    toast.success("Formulario enviado con éxito ✅");
-    setNombre("");
-    setMail("");
-    setTelefono("");
-    setConsulta("");
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_9tek7t7", // ID del servicio
+        "template_5x1npgm", // ID del template
+        form.current,
+        "peaHu1sOsNCyxdkIk" // Public key
+      )
+      .then(
+        () => {
+          toast.success("¡Mensaje enviado con éxito! ✅");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("Error al enviar:", error);
+          toast.error(
+            "Hubo un error al enviar el mensaje. Intentalo nuevamente."
+          );
+        }
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -65,8 +57,8 @@ const FormContacto = () => {
           <h2>Contacto</h2>
           <p>
             Ante cualquier consulta no dudes en escribirnos. Dejanos tus dudas
-            acá o escribinos a info@contextopsi.com. Te estaremos respondiendo a
-            la brevedad.
+            acá o escribinos a <strong>info@contextopsi.com.ar</strong>. Te
+            estaremos respondiendo a la brevedad.
           </p>
 
           <div className="contact-image">
@@ -75,37 +67,24 @@ const FormContacto = () => {
         </div>
 
         {/* Formulario */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <div className="form-row">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-            />
-            <input
-              type="email"
-              name="mail"
-              placeholder="Email"
-              value={mail}
-              onChange={(e) => setMail(e.target.value)}
-            />
+            <input type="text" name="nombre" placeholder="Nombre completo" />
+            <input type="email" name="mail" placeholder="Email" />
           </div>
-          <input
-            type="text"
-            name="telefono"
-            placeholder="Teléfono"
-            value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
-          />
+
+          <input type="text" name="telefono" placeholder="Teléfono" />
+
           <textarea
             name="consulta"
             placeholder="Mensaje"
-            value={consulta}
-            onChange={(e) => setConsulta(e.target.value)}
+            rows="5"
+            required
           ></textarea>
-          <button type="submit">Enviar consulta</button>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Enviando..." : "Enviar consulta"}
+          </button>
         </form>
       </div>
     </section>
