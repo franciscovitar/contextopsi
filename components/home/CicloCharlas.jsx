@@ -5,8 +5,8 @@ import "../styles/_charlas.scss";
 import Image from "next/image";
 
 // Importá los dos flyers que subiste
-import FlyerParte1 from "../../Images/charlas-parte1.jpg"; // cambia por el nombre real del archivo
-import FlyerParte2 from "../../Images/charlas-parte2.jpg"; // cambia por el nombre real del archivo
+import FlyerParte2 from "../../Images/charlas-parte1.jpg"; // cambia por el nombre real del archivo
+import FlyerParte1 from "../../Images/charlas-parte2.jpg"; // cambia por el nombre real del archivo
 
 const CicloCharlas = () => {
   return (

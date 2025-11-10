@@ -31,10 +31,10 @@ function Coor() {
       bio: `Psicóloga clínica. Ex concurrente del Hospital Muñiz. Diplomada en Educación Sexual Integral y Equidad de Género y Políticas Públicas. Formada en Psicoterapia Analítico Funcional (FAP) y Terapias de Tercera Ola (ACT, DBT, RO-DBT) y TDAH en adultxs. Creadora y coordinadora del espacio Encuentros Neurodivergentes.`,
     },
     {
-      name: "Lic. Prof. Liza Murlender",
+      name: "Lic. Liza Murlender",
       mn: "M.N. 70026",
       img: FotoLizaMurlender,
-      bio: `Psicóloga clínica integrativa, formada en Terapias contextuales, Trauma, Género y diplomada en Educación Sexual Integral. Consultora en Psicología organizacional, Liderazgo, Management y Estrategia.`,
+      bio: `Psicóloga clínica integrativa, formada en Terapias contextuales, Trauma, Género y diplomada en Educación Sexual Integral. Profesora de Enseñanza Media y Superior en Psicología. Consultora en Psicología organizacional, Liderazgo, Management y Estrategia.`,
     },
     {
       name: "Lic. Sol Leibgorin",
@@ -88,10 +88,15 @@ function Coor() {
       mn: "M.N. 67069",
       img: FotoVeronicaPercara,
     },
+    // {
+    //   name: "Lic. Micaela Prandi",
+    //   mn: "M.N. 72139",
+    //   img: FotoMicaelaPrandi,
+    // },
     {
-      name: "Lic. Micaela Prandi",
-      mn: "M.N. 72139",
-      img: FotoMicaelaPrandi,
+      name: "Lic. Flor Inchauspe",
+      mn: "M.N. 66484",
+      img: FotoFlorInchauspe,
     },
     {
       name: "Lic. Josefina Rueda",

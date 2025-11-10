@@ -27,7 +27,7 @@ function Contacto() {
           <div className="iconos">
             {/* Ícono de Email */}
             <a
-              href="mailto:equipo.contextopsi@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@contextopsi.com.ar"
               target="_blank"
               rel="noopener noreferrer"
             >

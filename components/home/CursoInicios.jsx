@@ -33,8 +33,10 @@ const CursoInicios = () => {
     },
     {
       title: "Ofrecemos",
-      content: `Encuentro semanal grupal de 2 hs, formato teórico-práctico + taller de supervisiones.
-3 hs mensuales de participación en espacios de Contexto Psi (ciclos de charlas y encuentros de supervisión de casos). Derivación de entre 1 o 2 pacientes con tutores asignadxs para acompañamiento. Posibilidad de continuar luego en supervisiones grupales o individuales.`,
+      content: `Encuentro semanal grupal de 2 hs, formato teórico-práctico + taller de supervisiones (lunes 18 a 20hs, obligatorio)
+3 hs mensuales de participación en espacios de Contexto.Psi (Ciclo de Charlas y encuentros de Supervisión de casos - jueves de 20 a 21h30, opcional). 
+Derivación de entre 1 o 2 pacientes con tutores asignadxs para acompañamiento. 
+Posibilidad de continuar luego en supervisiones grupales o individuales.`,
     },
     {
       title: "Condiciones para la derivación de consultantes",

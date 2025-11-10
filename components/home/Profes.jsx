@@ -35,7 +35,7 @@ const settings = {
 };
 
 const professionals = [
-  { name: "Lic. Flor Alvarez", number: "M.N. 76412" },
+  { name: "Lic. Florencia Alvarez", number: "M.N. 76412" },
   { name: "Lic. Luciana Arcastti", number: "M.N. 70106" },
   { name: "Lic. Julieta Arriola", number: "M.N. 65610" },
   { name: "Lic. Magalí Bergera", number: "M.N. 63302" },
@@ -74,6 +74,7 @@ const professionals2 = [
   { name: "Dra. Alicia DeMarchi", number: "M.N. 179772" },
   { name: "Dra. Lucía Nosiglia", number: "M.N. 163217" },
   { name: "Dra. Lucía Vendrell", number: "M.N. 172936" },
+  { name: "Dra. Camila Álvarez Maschio", number: "M.N. 177851" },
   { name: "Lic. Magalí Jurnet", number: "M.N. 8250" },
 ];
 
