@@ -18,7 +18,7 @@ export default function Supervision() {
     <section className="supervisiones-page">
       <div className="supervisiones-wrapper">
         <motion.div className="hero" {...fadeUp}>
-          <span className="eyebrow">Contexto.Psi</span>
+          {/* <span className="eyebrow">Contexto.Psi</span> */}
 
           <h1>Espacios de Supervisión</h1>
 
@@ -70,7 +70,9 @@ export default function Supervision() {
 
             <a
               className="cta-desktop"
-              href="mailto:info@contextopsi.com.ar?subject=Consulta%20-%20Espacios%20de%20Supervisi%C3%B3n"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@contextopsi.com.ar&su=Consulta%20-%20Espacios%20de%20Supervisi%C3%B3n"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Escribir por mail
             </a>

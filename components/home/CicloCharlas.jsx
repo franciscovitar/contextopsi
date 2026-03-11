@@ -29,10 +29,10 @@ const CicloCharlas = () => {
 
           <div className="flyers-grid">
             <div className="flyer">
-              <h3>— Perspectiva de Género y Diversidad</h3>
+              {/* <h3>— Perspectiva de Género y Diversidad</h3> */}
               <div className="flyer-card">
                 <Image
-                  src={FlyerParte1}
+                  src={FlyerParte2}
                   alt="Ciclo de Charlas Parte 1 - Perspectiva de Género y Diversidad"
                   className="flyer-img"
                   priority
@@ -43,10 +43,10 @@ const CicloCharlas = () => {
             </div>
 
             <div className="flyer">
-              <h3>— Temáticas Actuales en Salud Mental</h3>
+              {/* <h3>— Temáticas Actuales en Salud Mental</h3> */}
               <div className="flyer-card">
                 <Image
-                  src={FlyerParte2}
+                  src={FlyerParte1}
                   alt="Ciclo de Charlas Parte 2 - Temáticas Actuales en Salud Mental"
                   className="flyer-img"
                   quality={100}
