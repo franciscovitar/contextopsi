@@ -90,7 +90,9 @@ const NavBar = () => {
                 </a>
               </div>
             </div>
-
+            <Link href="/supervisiones" title="Supervisiones">
+              Supervisiones
+            </Link>
             <div className="dropdown" title="Contenido">
               <span>
                 Contenido <i className="bi bi-chevron-down"></i>
@@ -160,7 +162,9 @@ const NavBar = () => {
                 </a>
               </div>
             </div>
-
+            <Link href="/supervisiones" title="Supervisiones">
+              Supervisiones
+            </Link>
             <div className="dropdown" title="Contenido">
               <span>
                 Contenido <i className="bi bi-chevron-down"></i>

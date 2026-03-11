@@ -16,10 +16,10 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.85);
     box-shadow: $sombra-suave;
-    padding: 0.8rem 2rem;
+    padding: 0.55rem 1.6rem; // antes 0.8rem 2rem
 
     @media (max-width: 500px) {
-        padding: 0.8rem 1rem;
+        padding: 0.65rem 0.9rem;
     }
 
     .navbar-bg,
@@ -27,14 +27,14 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 1200px;
+        max-width: 1120px; // antes 1200px
         margin: auto;
 
         .left {
             .logo {
                 .logo-banderas {
                     .logo_time {
-                        width: 110px;
+                        width: 86px; // antes 110px
                         height: auto;
                         object-fit: contain;
                         transition: transform 0.3s ease;
@@ -50,14 +50,12 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
         .right {
             display: flex;
             align-items: center;
-            gap: 40px;
-
-
+            gap: 26px; // antes 40px
 
             .links {
                 display: flex;
                 align-items: center;
-                gap: 35px;
+                gap: 24px; // antes 35px
 
                 @media (max-width: 1150px) {
                     display: none;
@@ -65,12 +63,13 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
 
                 a,
                 span {
-                    font-size: 16px;
+                    font-size: 14px; // antes 16px
                     font-weight: 500;
                     text-decoration: none;
                     color: $texto;
                     position: relative;
                     transition: color 0.3s ease;
+                    line-height: 1.2;
 
                     &:hover {
                         color: $violeta;
@@ -80,30 +79,48 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                 .dropdown {
                     position: relative;
                     cursor: pointer;
+                    padding: 0.35rem 0; // agranda un poco el área activa
 
                     i {
-                        margin-left: 5px;
-                        font-size: 13px;
+                        margin-left: 4px;
+                        font-size: 11px;
+                    }
+
+                    // puente invisible entre el trigger y el menú
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 100%;
+                        height: 12px;
                     }
 
                     .dropdown-menu {
-                        display: none;
+                        display: block; // importante
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+
                         position: absolute;
-                        top: 100%;
+                        top: calc(100% + 2px); // antes tenías +10px
                         left: 0;
                         background-color: $fondo-blanco;
                         border-radius: 12px;
                         box-shadow: $sombra-suave;
-                        padding: 0.5rem 0;
-                        min-width: 180px;
+                        padding: 0.35rem 0;
+                        min-width: 165px;
                         z-index: 100;
 
+                        transform: translateY(6px);
+                        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
                         a {
-                            border-radius: 12px;
+                            border-radius: 10px;
                             display: block;
-                            padding: 0.7rem 1rem;
+                            padding: 0.6rem 0.9rem;
                             color: $texto;
-                            font-size: 15px;
+                            font-size: 13px;
                             text-align: left;
                             transition: background-color 0.3s ease;
 
@@ -111,14 +128,15 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                                 background-color: $hover-violeta;
                                 color: #fff;
                             }
-
-
-
                         }
                     }
 
-                    &:hover .dropdown-menu {
-                        display: block;
+                    &:hover .dropdown-menu,
+                    &:focus-within .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                        transform: translateY(0);
                     }
                 }
 
@@ -126,8 +144,9 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                     background: $violeta;
                     color: #fff;
                     font-weight: 600;
-                    padding: 0.6rem 1.2rem;
-                    border-radius: 30px;
+                    padding: 0.5rem 1rem; // antes 0.6rem 1.2rem
+                    border-radius: 24px; // antes 30px
+                    font-size: 13px;
                     transition: all 0.3s ease;
                     box-shadow: 0 4px 10px rgba($violeta, 0.3);
 
@@ -139,10 +158,8 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                 }
             }
 
-
-
             .hamburguesa {
-                font-size: 40px;
+                font-size: 34px; // antes 40px
                 display: none;
                 z-index: 100;
 
@@ -151,11 +168,8 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                     justify-content: right;
                 }
             }
-
-
         }
 
-        /* 🌸 Mobile menu */
         .bg-div {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -181,7 +195,7 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.25rem; // antes 1.5rem
             height: 100vh;
             text-align: center;
 
@@ -192,7 +206,7 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
             a,
             span {
                 color: $texto;
-                font-size: 1.2rem;
+                font-size: 1.05rem; // antes 1.2rem
                 text-decoration: none;
                 font-weight: 500;
                 transition: color 0.3s ease;
@@ -206,38 +220,53 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                 background: $violeta;
                 color: #fff;
                 font-weight: 600;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
+                padding: 0.7rem 1.25rem; // antes 0.8rem 1.5rem
+                border-radius: 22px;
                 box-shadow: 0 4px 10px rgba($violeta, 0.3);
             }
-
 
             .dropdown {
                 position: relative;
                 cursor: pointer;
+                padding: 0.25rem 0;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 100%;
+                    height: 12px;
+                }
 
                 i {
                     margin-left: 5px;
-                    font-size: 13px;
+                    font-size: 12px;
                 }
 
                 .dropdown-menu {
-                    display: none;
+                    display: block;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+
                     position: absolute;
-                    top: 100%;
-                    left: 0;
+                    top: calc(100% + 2px);
+                    left: 50%;
+                    transform: translateX(-50%) translateY(6px);
                     background-color: $fondo-blanco;
                     border-radius: 12px;
                     box-shadow: $sombra-suave;
                     padding: 0;
-                    min-width: 180px;
+                    min-width: 170px;
                     z-index: 100;
+                    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 
                     a {
                         display: block;
-                        padding: 0.7rem 1rem;
+                        padding: 0.65rem 0.9rem;
                         color: $texto;
-                        font-size: 15px;
+                        font-size: 14px;
                         text-align: left;
                         transition: background-color 0.3s ease;
                         border-radius: 12px;
@@ -246,18 +275,17 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                             background-color: $hover-violeta;
                             color: #fff;
                         }
-
-
-
                     }
                 }
 
-                &:hover .dropdown-menu {
-                    display: block;
+                &:hover .dropdown-menu,
+                &:focus-within .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    transform: translateX(-50%) translateY(0);
                 }
             }
-
         }
-
     }
 }
