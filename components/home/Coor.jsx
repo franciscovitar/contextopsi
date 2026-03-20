@@ -62,11 +62,11 @@ function Coor() {
       mn: "M.N. 64321",
       img: FotoFranciscoHerzberg,
     },
-    {
-      name: "Lic. Facundo Lezzi",
-      mn: "M.N. 76480",
-      img: FotoFacundoLezzi,
-    },
+    // {
+    //   name: "Lic. Facundo Lezzi",
+    //   mn: "M.N. 76480",
+    //   img: FotoFacundoLezzi,
+    // },
 
     {
       name: "Lic. Camila Larocca",
@@ -93,11 +93,11 @@ function Coor() {
     //   mn: "M.N. 72139",
     //   img: FotoMicaelaPrandi,
     // },
-    {
-      name: "Lic. Flor Inchauspe",
-      mn: "M.N. 66484",
-      img: FotoFlorInchauspe,
-    },
+    // {
+    //   name: "Lic. Flor Inchauspe",
+    //   mn: "M.N. 66484",
+    //   img: FotoFlorInchauspe,
+    // },
     {
       name: "Lic. Josefina Rueda",
       mn: "M.N. 74790",

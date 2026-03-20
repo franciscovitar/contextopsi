@@ -36,7 +36,6 @@ const settings = {
 
 const professionals = [
   { name: "Lic. Florencia Alvarez", number: "M.N. 76412" },
-  { name: "Lic. Luciana Arcastti", number: "M.N. 70106" },
   { name: "Lic. Julieta Arriola", number: "M.N. 65610" },
   { name: "Lic. Magalí Bergera", number: "M.N. 63302" },
   { name: "Lic. Stefanía Carancini", number: "M.N. 71160" },
@@ -44,17 +43,15 @@ const professionals = [
   { name: "Lic. Mariana Fanello", number: "M.N. 68349" },
   { name: "Lic. Ayelén Figueroa", number: "M.N. 78373" },
   { name: "Lic. Silvia Ferreyra", number: "M.N. 55280" },
-  { name: "Lic. Jazmín Groszmann", number: "M.N. 76435" },
   { name: "Lic. Francisco Herzberg", number: "M.N. 64321" },
   { name: "Lic. Facundo Lezzi", number: "M.N. 76480" },
   { name: "Lic. Flor Inchauspe", number: "M.N. 66484" },
   { name: "Lic. Luciana Zalazar", number: "M.N. 68763" },
   { name: "Lic. Alejandra Teplitzchi", number: "M.N. 65227" },
   { name: "Lic. Antonella Fernandez", number: "M.N. 78322" },
-  { name: "Lic. Agustina Zgaib", number: "M.N. 4791" },
   { name: "Lic. Nicolás Parera", number: "M.N. 69818" },
   { name: "Lic. Silvina Acosta", number: "M.N. 69755" },
-  { name: "Lic. Camila Gonzalez", number: "M.P. 77405" },
+  { name: "Lic. Sofía Capria", number: "M.N. 63767" },
 ];
 
 const professionals2 = [
@@ -69,15 +66,16 @@ const professionals2 = [
   { name: "Lic. Verónica Percara", number: "M.N. 67069" },
   { name: "Lic. Julieta Rosenzvit", number: "M.N. 69903" },
   { name: "Lic. Josefina Rueda", number: "M.N. 74790" },
-  { name: "Lic. Sofía Segal", number: "M.N. 82002" },
   { name: "Lic. Patricia Sosa", number: "M.N. 70123" },
   { name: "Dra. Alicia DeMarchi", number: "M.N. 179772" },
   { name: "Dra. Lucía Nosiglia", number: "M.N. 163217" },
   { name: "Dra. Lucía Vendrell", number: "M.N. 172936" },
   { name: "Dra. Camila Álvarez Maschio", number: "M.N. 177851" },
   { name: "Lic. Magalí Jurnet", number: "M.N. 8250" },
+  { name: "Lic. Melanie Salem", number: "M.N. 72090" },
+  { name: "Lic. Vico Tela", number: "M.N. 75564" },
+  { name: "Dr. Luciano Varela", number: "M.N. 181476" },
 ];
-
 function Profesionales() {
   return (
     <div className="contenedor-principal-Profesionales">
