@@ -10,7 +10,7 @@ import FlyerParte1 from "../../Images/Flyer-Contexto-2.png";
 const CicloCharlas = () => {
   return (
     <section className="capacitaciones-section">
-      <div className="container">
+      <div className="container-1">
         <h1>Ciclo de Charlas Contexto.Psi</h1>
 
         <div className="bloque">
