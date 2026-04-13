@@ -75,7 +75,7 @@ Introducción a terapias basadas en evidencia (TCC y Contextuales).`,
 
   return (
     <section className="capacitaciones-section1">
-      <div className="container">
+      <div className="container-1">
         <h1>Curso de Inicios en la Clínica</h1>
 
         <div className="bloque">
