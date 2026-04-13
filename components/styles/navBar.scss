@@ -97,27 +97,43 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                     }
 
                     .dropdown-menu {
-                        display: block; // importante
+                        display: block;
                         opacity: 0;
                         visibility: hidden;
                         pointer-events: none;
-
                         position: absolute;
-                        top: calc(100% + 2px); // antes tenías +10px
-                        left: 0;
+                        top: calc(100% + 2px);
+                        left: 0; // NOTA: en mobile lo tienes en 50% con translateX(-50%)
                         background-color: $fondo-blanco;
                         border-radius: 12px;
                         box-shadow: $sombra-suave;
-                        padding: 0.35rem 0;
+                        padding: 0.6rem 0.4rem; // Un poco más de padding interno general
                         min-width: 165px;
                         z-index: 100;
-
                         transform: translateY(6px);
                         transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 
+                        // ESTILOS PARA LOS HEADERS ("EN VIVO", "A TU RITMO")
+                        .dropdown-header {
+                            display: block;
+                            font-size: 11px;
+                            font-weight: 600;
+                            color: #555;
+                            padding: 0.2rem 0.9rem;
+                            text-align: left;
+                            letter-spacing: 0.5px;
+
+                            &.mt-spaced {
+                                margin-top: 0.8rem; // Espaciado superior para "A TU RITMO"
+                            }
+                        }
+
                         a {
                             border-radius: 10px;
-                            display: block;
+                            display: flex; // Cambiado a flex
+                            align-items: center;
+                            justify-content: space-between; // Separa el texto del badge
+                            gap: 20px;
                             padding: 0.6rem 0.9rem;
                             color: $texto;
                             font-size: 13px;
@@ -127,6 +143,28 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
                             &:hover {
                                 background-color: $hover-violeta;
                                 color: #fff;
+
+                                // Opcional: Que los badges se mantengan de su color original al hacer hover
+                                // o cambien a blanco. Lo dejaremos por defecto.
+                            }
+
+                            // ESTILOS DE LOS BADGES (Sincrónico / Asincrónico)
+                            .badge {
+                                font-size: 10.5px;
+                                padding: 0.2rem 0.6rem;
+                                border-radius: 12px;
+                                font-weight: 500;
+                                white-space: nowrap; // Evita que el texto baje a otra línea
+                            }
+
+                            .badge-blue {
+                                background-color: #e6f0fa;
+                                color: #005bc4;
+                            }
+
+                            .badge-green {
+                                background-color: #eaf5e6;
+                                color: #3b7c19;
                             }
                         }
                     }
@@ -288,4 +326,8 @@ $sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
             }
         }
     }
+}
+
+.capacitaciones-menu {
+    min-width: 270px !important;
 }

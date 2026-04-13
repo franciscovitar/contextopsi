@@ -73,26 +73,39 @@ const NavBar = () => {
             <Link href="/#Inicio" title="Nosotros">
               Inicio
             </Link>
-            {/* <Link href="/capacitaciones" title="Capacitaciones">
-              Capacitaciones
-            </Link> */}
 
             <div className="dropdown" title="Capacitaciones">
               <span>
                 Capacitaciones <i className="bi bi-chevron-down"></i>
               </span>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu capacitaciones-menu">
+                <span className="dropdown-header">EN VIVO</span>
                 <Link href="/cursos-inicio" title="Inicios">
-                  Curso de Inicios
+                  Curso de Inicios{" "}
+                  <span className="badge badge-blue">sincrónico</span>
                 </Link>
                 <a title="Charlas" href="ciclo-charlas">
-                  Ciclo de Charlas
+                  Ciclo de Charlas{" "}
+                  <span className="badge badge-blue">sincrónico</span>
                 </a>
+
+                <span className="dropdown-header mt-spaced">A TU RITMO</span>
+                <Link
+                  href="https://cursos.contextopsi.com.ar"
+                  title="Cursos Online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cursos Online{" "}
+                  <span className="badge badge-green">asincrónico</span>
+                </Link>
               </div>
             </div>
+
             <Link href="/supervisiones" title="Supervisiones">
               Supervisiones
             </Link>
+
             <div className="dropdown" title="Contenido">
               <span>
                 Contenido <i className="bi bi-chevron-down"></i>
@@ -141,30 +154,39 @@ const NavBar = () => {
             <Link onClick={handleClick} href="/#Inicio" title="Inicio">
               Inicio
             </Link>
-            {/* <Link
-              onClick={handleClick}
-              href="/capacitaciones"
-              title="Servicios"
-            >
-              Capacitaciones
-            </Link> */}
 
             <div className="dropdown" title="Capacitaciones">
               <span>
                 Capacitaciones <i className="bi bi-chevron-down"></i>
               </span>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu capacitaciones-menu">
+                <span className="dropdown-header">EN VIVO</span>
                 <Link href="/cursos-inicio" title="cursos">
-                  Curso de Inicios
+                  Curso de Inicios{" "}
+                  <span className="badge badge-blue">sincrónico</span>
                 </Link>
                 <a title="Ciclo" href="ciclo-charlas">
-                  Ciclo de Charlas
+                  Ciclo de Charlas{" "}
+                  <span className="badge badge-blue">sincrónico</span>
                 </a>
+
+                <span className="dropdown-header mt-spaced">A TU RITMO</span>
+                <Link
+                  href="https://cursos.contextopsi.com.ar"
+                  title="Cursos Online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cursos Online{" "}
+                  <span className="badge badge-green">asincrónico</span>
+                </Link>
               </div>
             </div>
+
             <Link href="/supervisiones" title="Supervisiones">
               Supervisiones
             </Link>
+
             <div className="dropdown" title="Contenido">
               <span>
                 Contenido <i className="bi bi-chevron-down"></i>
@@ -183,6 +205,7 @@ const NavBar = () => {
                 </a>
               </div>
             </div>
+
             <Link onClick={handleClick} href="/contacto" title="Contacto">
               Contacto
             </Link>
