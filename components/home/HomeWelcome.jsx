@@ -3,44 +3,63 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import FotoEquipo from "../../Images/image.jpeg";
+import FotoEquipo from "../../Images/fotoinicio.png";
 import "../styles/_homewelcome.scss";
 
 export default function HomeWelcome() {
   return (
-    <section id="inicio" className="home-container">
-      {/* Texto */}
-      <motion.div
-        className="home-text"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h1>Contexto.Psi</h1>
-        <p>
-          Equipo de Salud Mental con perspectiva de género y de derechos.
-          Atención psicológica para todas las edades. Presencial en Buenos Aires
-          y virtual en todo el mundo. Conformado por psicólogxs, psiquiatras y
-          nutricionistas con distintas corrientes teóricas.
-        </p>
-      </motion.div>
+    <section id="Inicio" className="home-container">
+      <div className="home-content">
+        <motion.div
+          className="home-text"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65 }}
+          viewport={{ once: true }}
+        >
+          <h1>
+            Salud mental con <span>perspectiva de género</span> y de derechos
+          </h1>
 
-      {/* Imagen */}
-      <motion.div
-        className="home-image"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <Image
-          src={FotoEquipo}
-          alt="Equipo de Contexto Psi"
-          className="foto-equipo"
-          priority
-        />
-      </motion.div>
+          <p>
+            Atención psicológica para todas las edades. Presencial en Buenos
+            Aires, virtual en todo el mundo. Psicólogxs, psiquiatras y
+            nutricionistas con distintas corrientes teóricas.
+          </p>
+
+          <div className="home-actions">
+            <a
+              className="home-button home-button-primary"
+              href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Empezar terapia
+            </a>
+
+            <a className="home-button home-button-secondary" href="#equipo">
+              Conocer el equipo
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="home-image"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.75, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          <Image
+            src={FotoEquipo}
+            alt="Red de profesionales de Contexto Psi"
+            className="foto-equipo"
+            fill
+            sizes="(max-width: 980px) 100vw, 60vw"
+            priority
+          />
+        </motion.div>
+      </div>
     </section>
   );
 }

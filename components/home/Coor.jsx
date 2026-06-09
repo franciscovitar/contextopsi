@@ -106,7 +106,7 @@ function Coor() {
   ];
 
   return (
-    <section className="coordination">
+    <section id="equipo" className="coordination">
       <h2 className="coordination-title">
         <span>EQUIPO DE COORDINACIÓN</span>
       </h2>

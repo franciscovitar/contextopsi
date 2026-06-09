@@ -1,333 +1,392 @@
 $violeta: #b28ee8;
-$hover-violeta: lighten($violeta, 8%);
+$violeta-oscuro: #8f6cda;
+$hover-violeta: lighten($violeta, 7%);
 $fondo-blanco: #ffffff;
-$fondo-pastel: #f7f5fa;
 $texto: #1f1f1f;
-$sombra-suave: 0 3px 15px rgba(0, 0, 0, 0.06);
+$texto-suave: #66616e;
+$sombra-suave: 0 4px 18px rgba(0, 0, 0, 0.055);
 
-.navbar-container1,
-.navbar-container2 {
+.navbar-site {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 10;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    transition: box-shadow 0.25s ease, background 0.25s ease;
     box-shadow: $sombra-suave;
-    padding: 0.55rem 1.6rem; // antes 0.8rem 2rem
 
-    @media (max-width: 500px) {
-        padding: 0.65rem 0.9rem;
+    &.scrolled {
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: $sombra-suave;
     }
 
-    .navbar-bg,
-    .navbar-nobg {
+    .navbar-shell {
+        width: 100%;
+        min-height: 92px;
+        padding: 0 4.2vw;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .navbar-left {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .logo-link {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        max-width: 1120px; // antes 1200px
-        margin: auto;
+        text-decoration: none;
+    }
 
-        .left {
-            .logo {
-                .logo-banderas {
-                    .logo_time {
-                        width: 86px; // antes 110px
-                        height: auto;
-                        object-fit: contain;
-                        transition: transform 0.3s ease;
-                    }
+    .logo_time {
+        width: 78px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.25s ease;
 
-                    &:hover .logo_time {
-                        transform: scale(1.03);
-                    }
-                }
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    .navbar-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.65rem;
+
+        a,
+        span {
+            font-size: 0.94rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: $texto;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.25s ease;
+
+            &:hover {
+                color: $violeta-oscuro;
             }
         }
+    }
 
-        .right {
-            display: flex;
-            align-items: center;
-            gap: 26px; // antes 40px
+    .dropdown {
+        position: relative;
+        padding: 1.1rem 0;
 
-            .links {
+        i {
+            margin-left: 0.25rem;
+            font-size: 0.72rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            height: 12px;
+        }
+
+        .dropdown-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 14px 35px rgba(30, 20, 55, 0.12);
+            padding: 0.65rem;
+            min-width: 180px;
+            z-index: 1003;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
+            .dropdown-header {
+                display: block;
+                font-size: 0.68rem;
+                font-weight: 800;
+                color: #8d8797;
+                padding: 0.35rem 0.8rem;
+                letter-spacing: 0.06em;
+
+                &.mt-spaced {
+                    margin-top: 0.65rem;
+                }
+            }
+
+            a {
+                border-radius: 12px;
                 display: flex;
                 align-items: center;
-                gap: 24px; // antes 35px
+                justify-content: space-between;
+                gap: 1rem;
+                padding: 0.7rem 0.85rem;
+                color: $texto;
+                font-size: 0.86rem;
+                line-height: 1.2;
+                transition: background 0.25s ease, color 0.25s ease;
 
-                @media (max-width: 1150px) {
-                    display: none;
+                &:hover {
+                    background: rgba($violeta, 0.18);
+                    color: $violeta-oscuro;
                 }
 
-                a,
-                span {
-                    font-size: 14px; // antes 16px
-                    font-weight: 500;
-                    text-decoration: none;
-                    color: $texto;
-                    position: relative;
-                    transition: color 0.3s ease;
-                    line-height: 1.2;
-
-                    &:hover {
-                        color: $violeta;
-                    }
-                }
-
-                .dropdown {
-                    position: relative;
-                    cursor: pointer;
-                    padding: 0.35rem 0; // agranda un poco el área activa
-
-                    i {
-                        margin-left: 4px;
-                        font-size: 11px;
-                    }
-
-                    // puente invisible entre el trigger y el menú
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        top: 100%;
-                        height: 12px;
-                    }
-
-                    .dropdown-menu {
-                        display: block;
-                        opacity: 0;
-                        visibility: hidden;
-                        pointer-events: none;
-                        position: absolute;
-                        top: calc(100% + 2px);
-                        left: 0; // NOTA: en mobile lo tienes en 50% con translateX(-50%)
-                        background-color: $fondo-blanco;
-                        border-radius: 12px;
-                        box-shadow: $sombra-suave;
-                        padding: 0.6rem 0.4rem; // Un poco más de padding interno general
-                        min-width: 165px;
-                        z-index: 100;
-                        transform: translateY(6px);
-                        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-
-                        // ESTILOS PARA LOS HEADERS ("EN VIVO", "A TU RITMO")
-                        .dropdown-header {
-                            display: block;
-                            font-size: 11px;
-                            font-weight: 600;
-                            color: #555;
-                            padding: 0.2rem 0.9rem;
-                            text-align: left;
-                            letter-spacing: 0.5px;
-
-                            &.mt-spaced {
-                                margin-top: 0.8rem; // Espaciado superior para "A TU RITMO"
-                            }
-                        }
-
-                        a {
-                            border-radius: 10px;
-                            display: flex; // Cambiado a flex
-                            align-items: center;
-                            justify-content: space-between; // Separa el texto del badge
-                            gap: 20px;
-                            padding: 0.6rem 0.9rem;
-                            color: $texto;
-                            font-size: 13px;
-                            text-align: left;
-                            transition: background-color 0.3s ease;
-
-                            &:hover {
-                                background-color: $hover-violeta;
-                                color: #fff;
-
-                                // Opcional: Que los badges se mantengan de su color original al hacer hover
-                                // o cambien a blanco. Lo dejaremos por defecto.
-                            }
-
-                            // ESTILOS DE LOS BADGES (Sincrónico / Asincrónico)
-                            .badge {
-                                font-size: 10.5px;
-                                padding: 0.2rem 0.6rem;
-                                border-radius: 12px;
-                                font-weight: 500;
-                                white-space: nowrap; // Evita que el texto baje a otra línea
-                            }
-
-                            .badge-blue {
-                                background-color: #e6f0fa;
-                                color: #005bc4;
-                            }
-
-                            .badge-green {
-                                background-color: #eaf5e6;
-                                color: #3b7c19;
-                            }
-                        }
-                    }
-
-                    &:hover .dropdown-menu,
-                    &:focus-within .dropdown-menu {
-                        opacity: 1;
-                        visibility: visible;
-                        pointer-events: auto;
-                        transform: translateY(0);
-                    }
-                }
-
-                .terapy {
-                    background: $violeta;
-                    color: #fff;
+                .badge {
+                    font-size: 0.68rem;
+                    padding: 0.18rem 0.55rem;
+                    border-radius: 999px;
                     font-weight: 600;
-                    padding: 0.5rem 1rem; // antes 0.6rem 1.2rem
-                    border-radius: 24px; // antes 30px
-                    font-size: 13px;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 4px 10px rgba($violeta, 0.3);
-
-                    &:hover {
-                        background: $hover-violeta;
-                        color: #FFF;
-                        box-shadow: 0 6px 14px rgba($violeta, 0.4);
-                    }
+                    white-space: nowrap;
                 }
-            }
 
-            .hamburguesa {
-                font-size: 34px; // antes 40px
-                display: none;
-                z-index: 100;
+                .badge-blue {
+                    background: #e6f0fa;
+                    color: #005bc4;
+                }
 
-                @media (max-width: 1150px) {
-                    display: flex;
-                    justify-content: right;
+                .badge-green {
+                    background: #eaf5e6;
+                    color: #3b7c19;
                 }
             }
         }
 
-        .bg-div {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        &:hover .dropdown-menu,
+        &:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+    }
+
+    .capacitaciones-menu {
+        min-width: 285px !important;
+    }
+
+    .terapy {
+        background: $violeta;
+        color: #fff;
+        font-weight: 700;
+        padding: 0.66rem 1.35rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        white-space: nowrap;
+        box-shadow: 0 8px 18px rgba($violeta, 0.32);
+        transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            color: #fff;
+            background: $violeta-oscuro;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba($violeta, 0.42);
+        }
+    }
+
+    .hamburguesa {
+        display: none;
+        border: 0;
+        background: transparent;
+        color: $texto;
+        font-size: 2.1rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 1004;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s ease, color 0.25s ease;
+
+        &:hover {
+            background: rgba($violeta, 0.1);
+            color: $violeta-oscuro;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid rgba($violeta, 0.45);
+            outline-offset: 3px;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 1120px) {
+    .navbar-site {
+        background: rgba(255, 255, 255, 0.96);
+
+        .navbar-shell {
+            min-height: 82px;
+            padding: 0 1.2rem;
+            grid-template-columns: auto 1fr auto;
+        }
+
+        .navbar-center,
+        .desktop-cta {
+            display: none;
+        }
+
+        .logo_time {
+            width: 68px;
+        }
+
+        .hamburguesa {
+            display: flex;
+        }
+
+        .mobile-menu {
+            display: block;
             position: fixed;
-            top: 0;
+            top: 82px;
+            left: 0;
             right: 0;
-            height: 100vh;
-            width: 100%;
+            height: calc(100dvh - 82px);
+            background:
+                radial-gradient(circle at 50% 0%, rgba($violeta, 0.12), transparent 34%),
+                linear-gradient(180deg, #ffffff 0%, #f8f6fb 100%);
             transform: translateX(100%);
             opacity: 0;
-            z-index: -1;
-            transition: all 0.5s ease;
+            pointer-events: none;
+            transition: transform 0.32s ease, opacity 0.32s ease;
+            z-index: 1001;
+            overflow-y: auto;
+            border-top: 1px solid rgba($violeta, 0.1);
 
             &.active {
                 transform: translateX(0);
                 opacity: 1;
-                z-index: 9;
+                pointer-events: auto;
             }
         }
 
         .links-active {
-            display: none;
+            width: min(100%, 440px);
+            min-height: 100%;
+            margin: 0 auto;
+            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1.25rem; // antes 1.5rem
-            height: 100vh;
-            text-align: center;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 0.65rem;
+            padding: 2rem 1.2rem 2.4rem;
 
-            &.d-flex {
+            a {
+                width: 100%;
+                min-height: 48px;
                 display: flex;
-            }
-
-            a,
-            span {
+                align-items: center;
+                justify-content: center;
                 color: $texto;
-                font-size: 1.05rem; // antes 1.2rem
+                border-radius: 16px;
+                font-size: 1rem;
+                line-height: 1.2;
                 text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s ease;
+                font-weight: 700;
+                transition:
+                    background 0.25s ease,
+                    color 0.25s ease,
+                    border-color 0.25s ease,
+                    transform 0.25s ease;
 
                 &:hover {
-                    color: $violeta;
+                    color: $violeta-oscuro;
+                    background: rgba($violeta, 0.08);
+                    border-color: rgba($violeta, 0.28);
+                    transform: translateY(-1px);
+                    background: rgba(255, 255, 255, 0.82);
+                    border: 1px solid rgba($violeta, 0.14);
+                    box-shadow: 0 10px 24px rgba(55, 43, 84, 0.045);
+
+
                 }
             }
 
             .terapy {
+                margin-top: 0.65rem;
+                min-height: 52px;
                 background: $violeta;
                 color: #fff;
-                font-weight: 600;
-                padding: 0.7rem 1.25rem; // antes 0.8rem 1.5rem
-                border-radius: 22px;
-                box-shadow: 0 4px 10px rgba($violeta, 0.3);
-            }
+                border: 0;
+                box-shadow: 0 14px 30px rgba($violeta, 0.3);
 
-            .dropdown {
-                position: relative;
-                cursor: pointer;
-                padding: 0.25rem 0;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    top: 100%;
-                    height: 12px;
-                }
-
-                i {
-                    margin-left: 5px;
-                    font-size: 12px;
-                }
-
-                .dropdown-menu {
-                    display: block;
-                    opacity: 0;
-                    visibility: hidden;
-                    pointer-events: none;
-
-                    position: absolute;
-                    top: calc(100% + 2px);
-                    left: 50%;
-                    transform: translateX(-50%) translateY(6px);
-                    background-color: $fondo-blanco;
-                    border-radius: 12px;
-                    box-shadow: $sombra-suave;
-                    padding: 0;
-                    min-width: 170px;
-                    z-index: 100;
-                    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-
-                    a {
-                        display: block;
-                        padding: 0.65rem 0.9rem;
-                        color: $texto;
-                        font-size: 14px;
-                        text-align: left;
-                        transition: background-color 0.3s ease;
-                        border-radius: 12px;
-
-                        &:hover {
-                            background-color: $hover-violeta;
-                            color: #fff;
-                        }
-                    }
-                }
-
-                &:hover .dropdown-menu,
-                &:focus-within .dropdown-menu {
-                    opacity: 1;
-                    visibility: visible;
-                    pointer-events: auto;
-                    transform: translateX(-50%) translateY(0);
+                &:hover {
+                    color: #fff;
+                    background: $violeta-oscuro;
                 }
             }
         }
     }
 }
 
-.capacitaciones-menu {
-    min-width: 270px !important;
+@media (max-width: 520px) {
+    .navbar-site {
+        .navbar-shell {
+            min-height: 80px;
+            padding: 0 1rem;
+        }
+
+        .logo_time {
+            width: 64px;
+        }
+
+        .hamburguesa {
+            width: 44px;
+            height: 44px;
+            font-size: 2rem;
+        }
+
+        .mobile-menu {
+            top: 80px;
+            height: calc(100dvh - 80px);
+        }
+
+        .links-active {
+            padding: 1.6rem 1rem 2rem;
+            gap: 0.58rem;
+
+            a {
+                min-height: 46px;
+                border-radius: 15px;
+                font-size: 0.96rem;
+            }
+
+            .terapy {
+                min-height: 50px;
+            }
+        }
+    }
 }

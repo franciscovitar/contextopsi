@@ -87,28 +87,28 @@ export default function Supervision() {
           <div className="steps-list">
             <div className="step-item">
               <span className="dot" />
-              <p>modalidad (individual o grupal)</p>
+              <p>Modalidad (individual o grupal)</p>
             </div>
 
             <div className="step-item">
               <span className="dot" />
-              <p>resumen del recorrido profesional y perspectiva teórica</p>
+              <p>Resumen del recorrido profesional y perspectiva teórica</p>
             </div>
 
             <div className="step-item">
               <span className="dot" />
-              <p>disponibilidad horaria</p>
+              <p>Disponibilidad horaria</p>
             </div>
 
             <div className="step-item">
               <span className="dot" />
-              <p>objetivos de supervisión</p>
+              <p>Objetivos de supervisión</p>
             </div>
 
             <div className="step-item">
               <span className="dot" />
               <p>
-                si es para supervisión individual, una breve descripción del
+                Si es para supervisión individual, una breve descripción del
                 caso que querés trabajar
               </p>
             </div>

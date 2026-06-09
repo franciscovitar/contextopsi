@@ -1,11 +1,12 @@
 $violeta: #b28ee8;
-$violeta-hover: lighten($violeta, 10%);
-$pastel: #f7f5fa;
-$texto: #2a2a2a;
+$violeta-oscuro: #8f6cda;
+$pastel: #f8f6fb;
+$texto: #242424;
+$texto-suave: #66616e;
 
 .contact-section {
-    background-color: $pastel;
-    padding: 20rem 2rem 10rem 2rem;
+    background: linear-gradient(180deg, #fdfcff 0%, $pastel 100%);
+    padding: 14rem 1.5rem 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,81 +15,56 @@ $texto: #2a2a2a;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 5rem;
+        gap: 4rem;
         max-width: 1100px;
         width: 100%;
         flex-wrap: wrap;
 
-        @media (max-width: 900px) {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 3rem;
-        }
-
-        /* Columna izquierda */
         .contact-info {
             flex: 1;
-            max-width: 450px;
+            max-width: 460px;
 
             h2 {
-                font-size: 2rem;
-                font-weight: 700;
                 color: $violeta;
+                font-size: clamp(2rem, 4vw, 3rem);
+                font-weight: 800;
+                line-height: 1.14;
+                letter-spacing: -1px;
                 margin-bottom: 1rem;
             }
 
             p {
-                color: $texto;
-                font-size: 1.05rem;
-                line-height: 1.7;
+                color: $texto-suave;
+                font-size: 1.03rem;
+                line-height: 1.72;
                 margin-bottom: 2rem;
-                opacity: 0.9;
+
+                strong {
+                    color: $texto;
+                    font-weight: 700;
+                }
             }
 
-            /* Eliminamos la imagen */
             .contact-image {
                 display: none;
             }
         }
 
-        /* Columna derecha (formulario) */
         .contact-form {
             flex: 1;
+            max-width: 520px;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
-            max-width: 500px;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(178, 142, 232, 0.1);
-            border: 1px solid rgba(178, 142, 232, 0.15);
-            transition: all 0.3s ease;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba($violeta, 0.16);
+            border-radius: 24px;
+            padding: clamp(1.6rem, 3vw, 2.2rem);
+            box-shadow: 0 18px 45px rgba(55, 43, 84, 0.08);
+            transition: box-shadow 0.25s ease;
 
             &:hover {
-                box-shadow: 0 8px 30px rgba($violeta, 0.12);
-            }
-
-
-
-
-            input,
-            textarea {
-                border: 1px solid #e3e3e3;
-                border-radius: 8px;
-                padding: 0.9rem 1.2rem;
-                font-size: 1rem;
-                color: $texto;
-                font-family: inherit;
-                background-color: #fff;
-                transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-                &:focus {
-                    outline: none;
-                    border-color: $violeta;
-                    box-shadow: 0 0 0 4px rgba($violeta, 0.15);
-                }
+                box-shadow: 0 22px 52px rgba(55, 43, 84, 0.11);
             }
 
             .form-row {
@@ -97,45 +73,114 @@ $texto: #2a2a2a;
 
                 input {
                     flex: 1;
-                    border-radius: 8px; // menor radio para que los bordes coincidan visualmente
-                    height: 50px;
                     width: 100%;
                 }
+            }
 
-                @media (max-width: 700px) {
-                    flex-direction: column;
+            input,
+            textarea {
+                width: 100%;
+                box-sizing: border-box;
+                border: 1px solid rgba($violeta, 0.18);
+                border-radius: 12px;
+                padding: 0.95rem 1rem;
+                font-size: 0.98rem;
+                color: $texto;
+                font-family: inherit;
+                background: #fff;
+                transition:
+                    border-color 0.25s ease,
+                    box-shadow 0.25s ease,
+                    background 0.25s ease;
 
-                    input {
-                        width: 100%;
-                    }
+                &::placeholder {
+                    color: rgba($texto-suave, 0.78);
+                }
+
+                &:focus {
+                    outline: none;
+                    border-color: rgba($violeta-oscuro, 0.7);
+                    box-shadow: 0 0 0 4px rgba($violeta, 0.14);
+                    background: #fff;
                 }
             }
 
             textarea {
-                min-height: 130px;
+                min-height: 135px;
                 resize: vertical;
+                line-height: 1.6;
             }
 
             button {
                 align-self: flex-start;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 background: $violeta;
                 color: #fff;
                 border: none;
-                padding: 0.9rem 1.8rem;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1rem;
+                padding: 0.95rem 1.8rem;
+                border-radius: 14px;
+                font-weight: 700;
+                font-size: 0.96rem;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                box-shadow: 0px 4px 10px rgba($violeta, 0.3);
+                transition:
+                    transform 0.25s ease,
+                    box-shadow 0.25s ease,
+                    background 0.25s ease,
+                    opacity 0.25s ease;
+                box-shadow: 0 10px 24px rgba($violeta, 0.28);
 
                 &:hover {
-                    background: $violeta-hover;
+                    background: $violeta-oscuro;
                     transform: translateY(-2px);
+                    box-shadow: 0 14px 30px rgba($violeta-oscuro, 0.3);
                 }
 
-                @media (max-width: 900px) {
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                    transform: none;
+                    box-shadow: 0 10px 24px rgba($violeta, 0.18);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-section {
+        padding: 12rem 1rem 6rem;
+
+        .contact-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2.5rem;
+
+            .contact-info {
+                max-width: 680px;
+            }
+
+            .contact-form {
+                width: 100%;
+
+                button {
                     align-self: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .contact-section {
+        .contact-content {
+            .contact-form {
+                .form-row {
+                    flex-direction: column;
+                    gap: 1rem;
                 }
             }
         }

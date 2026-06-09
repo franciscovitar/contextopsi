@@ -1,84 +1,141 @@
-$Rosa_principal: #FF6B98;
 $violeta: #b28ee8;
-$pastel: #f7f5fa;
-$texto: #1f1f1f;
-
-
+$violeta-oscuro: #8f6cda;
+$texto: #242424;
+$texto-suave: #66616e;
 
 .contacto-container {
-    background-color: #f7f5fa35;
-    padding: 150px 0;
+    background:
+        radial-gradient(circle at 12% 18%, rgba($violeta, 0.1), transparent 28%),
+        radial-gradient(circle at 88% 10%, rgba($violeta-oscuro, 0.07), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f8f5fc 100%);
+    padding: 5.8rem 1.5rem;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 1000px) {
-        // height: 65vh;
-    }
-
     .contacto {
-        position: relative;
+        width: min(900px, 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         flex-direction: column;
-        color: #000000;
-        gap: 50px;
+        color: $texto;
+        gap: 1.6rem;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba($violeta, 0.16);
+        border-radius: 28px;
+        padding: clamp(2rem, 5vw, 3.5rem);
+        box-shadow: 0 18px 45px rgba(55, 43, 84, 0.08);
+        backdrop-filter: blur(12px);
+    }
 
+    .contacto-header {
+        max-width: 620px;
+        margin: 0 auto;
+    }
 
-        div {
+    .logo {
+        width: min(220px, 70vw);
+        height: 105px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+    }
 
-            @media (max-width: 1000px) {
-                width: 90%;
-                height: auto;
+    h2 {
+        color: $violeta;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.14;
+        letter-spacing: -1px;
+        margin: 0 0 0.9rem;
+    }
+
+    p {
+        color: $texto-suave;
+        font-weight: 400;
+        font-size: 1.03rem;
+        line-height: 1.68;
+        margin: 0;
+    }
+
+    .iconos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.85rem;
+        flex-wrap: wrap;
+
+        a {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: $violeta-oscuro;
+            background: #fff;
+            border: 1px solid rgba($violeta, 0.2);
+            box-shadow: 0 12px 28px rgba(55, 43, 84, 0.08);
+            text-decoration: none;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+
+            &:hover {
+                transform: translateY(-3px);
+                background: $violeta;
+                color: #fff;
+                border-color: $violeta;
+                box-shadow: 0 16px 34px rgba($violeta, 0.28);
+            }
+        }
+
+        i {
+            color: inherit;
+            font-size: 1.35rem;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .contacto-container {
+        padding: 4.2rem 1rem;
+
+        .contacto {
+            border-radius: 22px;
+            padding: 2rem 1.2rem;
+        }
+
+        .logo {
+            width: min(200px, 72vw);
+            height: 96px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 0.96rem;
+            line-height: 1.62;
+        }
+
+        .iconos {
+            gap: 0.75rem;
+
+            a {
+                width: 48px;
+                height: 48px;
             }
 
-            div {
-                margin: auto;
-
-                .logo {
-                    width: 100%;
-                    height: 150px;
-                    object-fit: contain;
-                    // @media (max-height: 750px) {
-                    //     display: none;
-                    // }
-                }
-            }
-
-
-
-            p {
-                font-weight: 500;
-                font-size: 18px;
-
-                @media (max-width: 1000px) {
-                    font-size: 16px;
-                }
-            }
-
-            .iconos {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                height: 30px;
-
-                @media (max-width: 1000px) {
-                    margin: auto;
-                    font-size: 18px;
-                }
-
-                i {
-                    color: #000000;
-                    font-size: 30px;
-
-                    &:hover {
-                        color: #B28EE8;
-                    }
-                }
+            i {
+                font-size: 1.25rem;
             }
         }
     }

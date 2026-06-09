@@ -10,18 +10,23 @@ function Contacto() {
   return (
     <div id="contacto" className="contacto-container">
       <div className="contacto">
-        <div>
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: 1,
-              transition: { duration: 0.5, delay: 0 },
-            }}
-          >
-            <Image alt="logo" className="logo" src={Logo} />
-          </motion.div>
-        </div>
+        <motion.div
+          className="contacto-header"
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, delay: 0 },
+          }}
+        >
+          <Image alt="Logo Contexto Psi" className="logo" src={Logo} />
+          <h2>Conectá con Contexto.Psi</h2>
+          <p>
+            Seguinos en redes o escribinos por mail para consultas, admisiones,
+            capacitaciones y supervisiones.
+          </p>
+        </motion.div>
 
         <div>
           <div className="iconos">

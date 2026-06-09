@@ -1,98 +1,74 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import Logo from "../../Images/logo.jpeg";
 import Image from "next/image";
 import "../styles/navBar.scss";
 import Link from "next/link";
 
-const textVariants = {
-  viewport: { once: true },
-  initial: { opacity: 0, x: -50 },
-  whileInView: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, delay: 0 },
-  },
-};
+const TERAPIA_LINK =
+  "https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true";
 
 const NavBar = () => {
   const [clicked, setClicked] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
-  const bgDiv = useRef(null);
-  const linksActive = useRef(null);
-
-  const handleClick = () => {
-    bgDiv.current.classList.toggle("active");
-    linksActive.current.classList.toggle("d-flex");
-    setClicked(!clicked);
-  };
-
-  const changeBg = () => {
-    if (window.scrollY > 80) setNavbar(true);
-    else setNavbar(false);
-  };
-
   useEffect(() => {
+    const changeBg = () => {
+      setNavbar(window.scrollY > 40);
+    };
+
+    changeBg();
     window.addEventListener("scroll", changeBg);
+
     return () => window.removeEventListener("scroll", changeBg);
   }, []);
 
+  const closeMenu = () => setClicked(false);
+
   return (
-    <nav className={navbar ? "navbar-container1" : "navbar-container2"}>
-      <div className={navbar ? "navbar-bg" : "navbar-nobg"}>
-        {/* ---------- Logo ---------- */}
-        <div className="left">
-          <motion.div className="logo" {...textVariants}>
-            <Link href="/" className="logo-banderas">
-              <Image
-                className="logo_time"
-                src={Logo}
-                alt="Logo"
-                title="Logo"
-                priority
-              />
-            </Link>
-          </motion.div>
+    <nav className={`navbar-site ${navbar ? "scrolled" : ""}`}>
+      <div className="navbar-shell">
+        {/* Logo izquierda */}
+        <div className="navbar-left">
+          <Link href="/" className="logo-link" aria-label="Contexto Psi">
+            <Image
+              className="logo_time"
+              src={Logo}
+              alt="Logo Contexto Psi"
+              title="Contexto Psi"
+              priority
+            />
+          </Link>
         </div>
 
-        {/* ---------- Links Desktop ---------- */}
-        <motion.div
-          className="right"
-          viewport={{ once: true }}
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, delay: 0.3 },
-          }}
-        >
+        {/* Links centro */}
+        <div className="navbar-center">
           <div className="links">
-            <Link href="/#Inicio" title="Nosotros">
-              Inicio
-            </Link>
+            <Link href="/#Inicio">Inicio</Link>
 
-            <div className="dropdown" title="Capacitaciones">
+            <div className="dropdown">
               <span>
                 Capacitaciones <i className="bi bi-chevron-down"></i>
               </span>
+
               <div className="dropdown-menu capacitaciones-menu">
                 <span className="dropdown-header">EN VIVO</span>
-                <Link href="/cursos-inicio" title="Inicios">
+
+                <Link href="/cursos-inicio">
                   Curso de Inicios{" "}
                   <span className="badge badge-blue">sincrónico</span>
                 </Link>
-                <a title="Charlas" href="ciclo-charlas">
+
+                <Link href="/ciclo-charlas">
                   Ciclo de Charlas{" "}
                   <span className="badge badge-blue">sincrónico</span>
-                </a>
+                </Link>
 
                 <span className="dropdown-header mt-spaced">A TU RITMO</span>
+
                 <Link
                   href="https://cursos.contextopsi.com.ar"
-                  title="Cursos Online"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -102,20 +78,17 @@ const NavBar = () => {
               </div>
             </div>
 
-            <Link href="/supervisiones" title="Supervisiones">
-              Supervisiones
-            </Link>
+            <Link href="/supervisiones">Supervisiones</Link>
 
-            <div className="dropdown" title="Contenido">
+            <div className="dropdown">
               <span>
                 Contenido <i className="bi bi-chevron-down"></i>
               </span>
+
               <div className="dropdown-menu">
-                <Link href="/contenido" title="Publicaciones">
-                  Publicaciones
-                </Link>
+                <Link href="/contenido">Publicaciones</Link>
+
                 <a
-                  title="Videos"
                   href="https://www.youtube.com/watch?v=_2ncZBjns-o&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -125,101 +98,76 @@ const NavBar = () => {
               </div>
             </div>
 
-            <Link href="/contacto" title="Contacto">
-              Contacto
-            </Link>
-
-            <a
-              className="terapy"
-              title="opiniones"
-              href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Empezar terapia
-            </a>
+            <Link href="/contacto">Contacto</Link>
           </div>
+        </div>
 
-          {/* ---------- Icono Hamburguesa ---------- */}
-          <i
+        {/* Botón derecha */}
+        <div className="navbar-right">
+          <a
+            className="terapy desktop-cta"
+            href={TERAPIA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Empezar terapia
+          </a>
+
+          <button
             type="button"
-            onClick={handleClick}
-            className={`hamburguesa bi ${clicked ? "bi-x" : "bi-list"}`}
-          ></i>
-        </motion.div>
+            onClick={() => setClicked(!clicked)}
+            className="hamburguesa"
+            aria-label="Abrir menú"
+          >
+            <i className={`bi ${clicked ? "bi-x" : "bi-list"}`}></i>
+          </button>
+        </div>
+      </div>
 
-        {/* ---------- Menu Móvil ---------- */}
-        <div ref={bgDiv} className="bg-div">
-          <div ref={linksActive} className="links-active">
-            <Link onClick={handleClick} href="/#Inicio" title="Inicio">
-              Inicio
-            </Link>
+      {/* Menú mobile */}
+      <div className={`mobile-menu ${clicked ? "active" : ""}`}>
+        <div className="links-active">
+          <Link onClick={closeMenu} href="/#Inicio">
+            Inicio
+          </Link>
 
-            <div className="dropdown" title="Capacitaciones">
-              <span>
-                Capacitaciones <i className="bi bi-chevron-down"></i>
-              </span>
-              <div className="dropdown-menu capacitaciones-menu">
-                <span className="dropdown-header">EN VIVO</span>
-                <Link href="/cursos-inicio" title="cursos">
-                  Curso de Inicios{" "}
-                  <span className="badge badge-blue">sincrónico</span>
-                </Link>
-                <a title="Ciclo" href="ciclo-charlas">
-                  Ciclo de Charlas{" "}
-                  <span className="badge badge-blue">sincrónico</span>
-                </a>
+          <Link onClick={closeMenu} href="/cursos-inicio">
+            Curso de Inicios
+          </Link>
 
-                <span className="dropdown-header mt-spaced">A TU RITMO</span>
-                <Link
-                  href="https://cursos.contextopsi.com.ar"
-                  title="Cursos Online"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Cursos Online{" "}
-                  <span className="badge badge-green">asincrónico</span>
-                </Link>
-              </div>
-            </div>
+          <Link onClick={closeMenu} href="/ciclo-charlas">
+            Ciclo de Charlas
+          </Link>
 
-            <Link href="/supervisiones" title="Supervisiones">
-              Supervisiones
-            </Link>
+          <Link
+            onClick={closeMenu}
+            href="https://cursos.contextopsi.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cursos Online
+          </Link>
 
-            <div className="dropdown" title="Contenido">
-              <span>
-                Contenido <i className="bi bi-chevron-down"></i>
-              </span>
-              <div className="dropdown-menu">
-                <Link href="/contenido" title="Publicaciones">
-                  Publicaciones
-                </Link>
-                <a
-                  title="Videos"
-                  href="https://www.youtube.com/watch?v=_2ncZBjns-o&list=PLmJk3GS1utEkZVr3aHRRUGAGQdfaVetEq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Videos
-                </a>
-              </div>
-            </div>
+          <Link onClick={closeMenu} href="/supervisiones">
+            Supervisiones
+          </Link>
 
-            <Link onClick={handleClick} href="/contacto" title="Contacto">
-              Contacto
-            </Link>
+          <Link onClick={closeMenu} href="/contenido">
+            Contenido
+          </Link>
 
-            <a
-              className="terapy"
-              title="opiniones"
-              href="https://docs.google.com/forms/d/1qcimoFm4im0JsrUKTY_E1dnXbSjEQOuBYScO_H-x_JY/viewform?pli=1&pli=1&edit_requested=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Empezar terapia
-            </a>
-          </div>
+          <Link onClick={closeMenu} href="/contacto">
+            Contacto
+          </Link>
+
+          <a
+            className="terapy"
+            href={TERAPIA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Empezar terapia
+          </a>
         </div>
       </div>
     </nav>

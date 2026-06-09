@@ -1,99 +1,126 @@
 $violeta: #b28ee8;
+$violeta-oscuro: #8f6cda;
 $violeta-claro: #e7dcf8;
+$verde: #00e496;
 $pastel: #f7f5fa;
-$texto: #1f1f1f;
-$sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.05);
-
-
-
-
+$texto: #242424;
+$texto-suave: #66616e;
+$sombra-suave: 0 12px 32px rgba(55, 43, 84, 0.07);
 
 .coordination {
-    background-color: #f7f5fa4c;
-    color: #fff;
-    padding: 2rem;
+    background: #f7f5fa4c;
+    color: $texto;
+    padding: 4.5rem 2rem 5rem;
     text-align: center;
 
     @media (max-width: 480px) {
-        padding: 2rem 0.5rem;
+        padding: 3.5rem 0.8rem 4rem;
     }
 
     .coordination-title {
-        margin-top: 100px;
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 50px;
+        margin-top: 4.5rem;
+        margin-bottom: 2.8rem;
+        font-size: clamp(1.65rem, 3vw, 2.35rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
 
         span {
-            color: #00e496; // Verde vibrante
+            color: $verde;
         }
     }
 
     .coordination-list {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap; // ✅ Siempre permitir el wrap
+        flex-wrap: wrap;
         gap: 2rem;
-        margin-bottom: 3rem;
-        overflow-x: visible; // ✅ Evita scroll horizontal no deseado
+        margin-bottom: 3.5rem;
+        overflow-x: visible;
 
         .coordination-item {
+            width: 180px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: all 0.3s ease;
-            width: 180px; // tamaño fijo controlado (se ajusta con media queries)
+            transition: transform 0.25s ease;
+
+            &:hover {
+                transform: translateY(-3px);
+
+                .coordination-image-wrapper {
+                    border-color: $violeta-oscuro;
+                    box-shadow: 0 10px 24px rgba($violeta, 0.18);
+                }
+
+                .coordination-name {
+                    color: $violeta-oscuro;
+                }
+            }
 
             .coordination-image-wrapper {
-                width: 90px;
-                height: 90px;
+                width: 96px;
+                height: 96px;
                 margin-bottom: 1rem;
                 border-radius: 50%;
                 overflow: hidden;
-                border: 2px solid #b28ee8;
+                border: 2px solid $violeta;
+                box-shadow: 0 8px 22px rgba($violeta, 0.12);
+                transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
                 .coordination-image {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     filter: grayscale(100%);
-                    transition: all 0.4s ease;
+                    transition: filter 0.3s ease, transform 0.3s ease;
                 }
             }
 
             .coordination-info {
                 .coordination-name {
                     font-size: 1rem;
-                    font-weight: bold;
-                    color: #b28ee8;
+                    font-weight: 700;
+                    line-height: 1.35;
+                    color: $violeta;
+                    margin-bottom: 0.25rem;
+                    transition: color 0.25s ease;
                 }
 
                 .coordination-mn {
-                    font-size: 0.9rem;
-                    color: #9f95b6;
+                    font-size: 0.88rem;
+                    line-height: 1.45;
+                    color: #8b819f;
+                    margin-bottom: 0;
                 }
 
                 .see-more {
-                    margin-top: 0.5rem;
-                    background: none;
-                    border: 1px solid $violeta;
-                    color: $violeta;
-                    padding: 0.3rem 0.8rem;
-                    border-radius: 8px;
+                    margin-top: 0.7rem;
+                    background: transparent;
+                    border: 1px solid rgba($violeta, 0.7);
+                    color: $violeta-oscuro;
+                    padding: 0.38rem 0.9rem;
+                    border-radius: 999px;
                     font-size: 0.8rem;
+                    font-weight: 600;
                     cursor: pointer;
-                    transition: all 0.3s ease;
+                    transition: all 0.25s ease;
 
                     &:hover {
                         background: $violeta;
+                        border-color: $violeta;
                         color: #fff;
+                        transform: translateY(-1px);
                     }
                 }
             }
         }
 
-        /* 🔹 Ajustes responsive */
         @media (max-width: 992px) {
             gap: 1.5rem;
 
@@ -103,24 +130,20 @@ $sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.05);
         }
 
         @media (max-width: 600px) {
-            gap: 1rem;
+            gap: 1.25rem 1rem;
 
             .coordination-item {
-                width: 45%; // 2 por fila en móvil
+                width: 45%;
             }
         }
 
         @media (max-width: 400px) {
             .coordination-item {
-                width: 100%; // 1 por fila
+                width: 100%;
             }
         }
     }
 
-
-
-
-    // --- Modal ---
     .coordination-modal {
         position: fixed;
         inset: 0;
@@ -134,42 +157,48 @@ $sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.05);
 
         .coordination-modal-content {
             background: #ffffff;
-            border-radius: 20px;
-            padding: 2rem;
+            border: 1px solid rgba($violeta, 0.14);
+            border-radius: 22px;
+            padding: 2.2rem;
             max-width: 600px;
             width: 100%;
             text-align: center;
             color: $texto;
-            box-shadow: 0 10px 30px rgba($violeta, 0.2);
-            animation: fadeIn 0.4s ease;
+            box-shadow: 0 18px 45px rgba($violeta, 0.18);
+            animation: fadeIn 0.35s ease;
 
             .coordination-modal-image {
                 border-radius: 50%;
-                width: 130px;
-                height: 130px;
+                width: 132px;
+                height: 132px;
                 object-fit: cover;
                 border: 3px solid $violeta;
                 margin-bottom: 1rem;
-                filter: grayscale(100%); // 🔹 Blanco y negro
+                filter: grayscale(100%);
+                box-shadow: 0 10px 24px rgba($violeta, 0.16);
             }
 
             h3 {
                 color: $violeta;
-                font-weight: 700;
-                margin-bottom: 0.3rem;
+                font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+                font-weight: 800;
+                line-height: 1.2;
+                margin-bottom: 0.35rem;
             }
 
             .coordination-mn {
-                color: #6b6b6b;
-                font-size: 0.9rem;
+                color: #8b819f;
+                font-size: 0.92rem;
+                font-weight: 500;
+                margin-bottom: 0;
             }
 
             .coordination-bio {
-                color: #444;
-                font-size: 1rem;
-                margin-top: 1rem;
-                line-height: 1.6;
-                text-align: justify;
+                color: $texto-suave;
+                font-size: 0.98rem;
+                margin-top: 1.2rem;
+                line-height: 1.7;
+                text-align: left;
             }
 
             .close-btn {
@@ -177,19 +206,21 @@ $sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.05);
                 background: $violeta;
                 color: #fff;
                 border: none;
-                padding: 0.6rem 1.2rem;
-                border-radius: 10px;
-                font-weight: 600;
+                padding: 0.7rem 1.3rem;
+                border-radius: 12px;
+                font-weight: 700;
                 cursor: pointer;
-                transition: all 0.3s ease;
+                transition: all 0.25s ease;
+                box-shadow: 0 10px 22px rgba($violeta, 0.24);
 
                 &:hover {
-                    background: darken($violeta, 8%);
+                    background: $violeta-oscuro;
+                    transform: translateY(-2px);
+                    box-shadow: 0 14px 28px rgba($violeta-oscuro, 0.28);
                 }
             }
         }
     }
-
 
     @keyframes fadeIn {
         from {
