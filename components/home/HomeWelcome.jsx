@@ -50,14 +50,15 @@ export default function HomeWelcome() {
           transition={{ duration: 0.75, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <Image
-            src={FotoEquipo}
-            alt="Red de profesionales de Contexto Psi"
-            className="foto-equipo"
-            fill
-            sizes="(max-width: 980px) 100vw, 60vw"
-            priority
-          />
+          <div className="home-image-frame">
+            <Image
+              src={FotoEquipo}
+              alt="Red de profesionales de Contexto Psi"
+              className="foto-equipo"
+              sizes="(max-width: 980px) 100vw, 56vw"
+              priority
+            />
+          </div>
         </motion.div>
       </div>
     </section>
