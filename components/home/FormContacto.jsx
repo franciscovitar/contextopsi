@@ -7,11 +7,21 @@ import Image from "next/image";
 import "../styles/_formContacto.scss";
 import FotoContacto from "../../Images/sitioweb.jpg";
 
+const trackContactFormConversion = () => {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", "generate_lead", {
+      form_name: "Formulario de contacto",
+      form_id: "contacto_contextopsi",
+      method: "emailjs",
+    });
+  }
+};
+
 const FormContacto = () => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form.current);
@@ -27,32 +37,29 @@ const FormContacto = () => {
 
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_9tek7t7", // ID del servicio
-        "template_5x1npgm", // ID del template
+    try {
+      await emailjs.sendForm(
+        "service_9tek7t7",
+        "template_5x1npgm",
         form.current,
-        "peaHu1sOsNCyxdkIk" // Public key
-      )
-      .then(
-        () => {
-          toast.success("¡Mensaje enviado con éxito! ✅");
-          form.current.reset();
-        },
-        (error) => {
-          console.error("Error al enviar:", error);
-          toast.error(
-            "Hubo un error al enviar el mensaje. Intentalo nuevamente."
-          );
-        }
-      )
-      .finally(() => setLoading(false));
+        "peaHu1sOsNCyxdkIk"
+      );
+
+      trackContactFormConversion();
+
+      toast.success("¡Mensaje enviado con éxito! ✅");
+      form.current.reset();
+    } catch (error) {
+      console.error("Error al enviar:", error);
+      toast.error("Hubo un error al enviar el mensaje. Intentalo nuevamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section className="contact-section" id="contacto">
       <div className="contact-content">
-        {/* Texto + imagen */}
         <div className="contact-info">
           <h2>Contacto</h2>
           <p>
@@ -66,7 +73,6 @@ const FormContacto = () => {
           </div>
         </div>
 
-        {/* Formulario */}
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <div className="form-row">
             <input type="text" name="nombre" placeholder="Nombre completo" />
