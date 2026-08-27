@@ -44,7 +44,6 @@ const professionals = [
   { name: "Lic. Ayelén Figueroa", number: "M.N. 78373" },
   { name: "Lic. Silvia Ferreyra", number: "M.N. 55280" },
   { name: "Lic. Francisco Herzberg", number: "M.N. 64321" },
-  { name: "Lic. Facundo Lezzi", number: "M.N. 76480" },
   { name: "Lic. Flor Inchauspe", number: "M.N. 66484" },
   { name: "Lic. Luciana Zalazar", number: "M.N. 68763" },
   { name: "Lic. Alejandra Teplitzchi", number: "M.N. 65227" },
@@ -52,6 +51,7 @@ const professionals = [
   { name: "Lic. Nicolás Parera", number: "M.N. 69818" },
   { name: "Lic. Silvina Acosta", number: "M.N. 69755" },
   { name: "Lic. Sofía Capria", number: "M.N. 63767" },
+  { name: "Lic. Tabhata Casco", number: "M.N. 77173" },
 ];
 
 const professionals2 = [
@@ -70,10 +70,8 @@ const professionals2 = [
   { name: "Dra. Alicia DeMarchi", number: "M.N. 179772" },
   { name: "Dra. Lucía Nosiglia", number: "M.N. 163217" },
   { name: "Dra. Lucía Vendrell", number: "M.N. 172936" },
-  { name: "Dra. Camila Álvarez Maschio", number: "M.N. 177851" },
   { name: "Lic. Magalí Jurnet", number: "M.N. 8250" },
   { name: "Lic. Melanie Salem", number: "M.N. 72090" },
-  { name: "Lic. Vico Tela", number: "M.N. 75564" },
   { name: "Dr. Luciano Varela", number: "M.N. 181476" },
 ];
 function Profesionales() {
