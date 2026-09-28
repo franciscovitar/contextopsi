@@ -51,6 +51,7 @@ export const professionals = [
     name: "Lic. Julieta Arriola",
     number: "M.N. 65610",
     photo: "/professionals/team/julieta-arriola.webp",
+    photoObjectPosition: "center 22%",
     bio: "Psicóloga clínica de niñxs, adolescentes y adultxs, con orientación psicoanalítica. Ex-concurrente del Hospital de niños Ricardo Gutiérrez.",
   },
   {
@@ -114,6 +115,7 @@ export const professionals = [
     name: "Lic. Luciana Zalazar",
     number: "M.N. 68763",
     photo: "/professionals/team/luciana-zalazar.webp",
+    photoObjectPosition: "center 28%",
     bio: "Psicóloga clínica con enfoque contextual, formada en Terapia de Aceptación y Compromiso (ACT), neurodivergencias y acompañamiento de procesos asistidos con psicodélicos.",
   },
   {
