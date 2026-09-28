@@ -18,11 +18,11 @@ const lineVariants = {
 
 const settings = {
   infinite: true,
-  speed: 500,
+  speed: 900,
   slidesToShow: 8,
-  slidesToScroll: 2,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3500,
   prevArrow: <CustomPrevArrow />,
   nextArrow: <CustomNextArrow />,
   responsive: [
