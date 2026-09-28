@@ -51,7 +51,7 @@ export const professionals = [
     name: "Lic. Julieta Arriola",
     number: "M.N. 65610",
     photo: "/professionals/team/julieta-arriola.webp",
-    photoObjectPosition: "center 22%",
+    photoObjectPosition: "center 0%",
     bio: "Psicóloga clínica de niñxs, adolescentes y adultxs, con orientación psicoanalítica. Ex-concurrente del Hospital de niños Ricardo Gutiérrez.",
   },
   {
