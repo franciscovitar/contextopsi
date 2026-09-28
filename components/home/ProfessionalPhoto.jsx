@@ -11,6 +11,7 @@ function ProfessionalPhoto({ professional, className = "" }) {
         width={400}
         height={400}
         className={className}
+        style={{ objectPosition: professional.photoObjectPosition || "center 35%" }}
       />
     );
   }
