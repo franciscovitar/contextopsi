@@ -51,9 +51,19 @@ $sombra: 0 14px 34px rgba(55, 43, 84, 0.075);
         margin: 2.6rem auto;
         width: 90%;
 
+        .slick-list {
+            margin: 0 -6px;
+        }
+
         .slick-slide {
             display: flex !important;
             justify-content: center;
+
+            > div {
+                width: 100%;
+                padding: 0 6px;
+                box-sizing: border-box;
+            }
         }
 
         .profesional {
