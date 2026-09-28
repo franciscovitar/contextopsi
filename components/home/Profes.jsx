@@ -19,7 +19,7 @@ const lineVariants = {
 const settings = {
   infinite: true,
   speed: 900,
-  slidesToShow: 8,
+  slidesToShow: 7,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3500,
