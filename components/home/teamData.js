@@ -20,7 +20,7 @@ export const coordinators = [
     name: "Lic. Sol Leibgorin",
     number: "M.N. 69481",
     photo: "/professionals/team/sol-leibgorin.webp",
-    bio: "Psicóloga Clínica Integrativa, especializada en Sexología Clínica y diplomada en Educación Sexual Integral. También se desempeña en el ámbito de la Psicología Educativa.",
+    bio: "Licenciada en Psicología (UBA). Trabaja desde una perspectiva integrativa en la atención de adultxs. Especializada en Sexología Clínica y diplomada en Educación Sexual Integral. Se desempeña también en el ámbito de la Psicología Educativa.",
   },
   {
     id: "luciana-conti",
@@ -59,7 +59,7 @@ export const professionals = [
     name: "Lic. Magalí Bergera",
     number: "M.N. 63302",
     photo: "/professionals/team/magali-bergera.webp",
-    bio: "Psicóloga, dedicada a la clínica psicoanalítiac y a la investigación en ese campo. Ex-concurrente del Hospital Borda. Trabajó varios años en un dispositivo de abordaje de problemáticas de consumo y en un centro de atención integral orientado a mujeres.",
+    bio: "Psicóloga, dedicada a la clínica psicoanalítica y a la investigación en ese campo. Ex-concurrente del Hospital Borda. Trabajó varios años en un dispositivo de abordaje de problemáticas de consumo y en un centro de atención integral orientado a mujeres.",
   },
   {
     id: "stefania-carancini",
@@ -142,7 +142,7 @@ export const professionals = [
   {
     id: "camila-lara",
     name: "Lic. Camila Lara",
-    number: null,
+    number: "M.N. 80058",
     photo: "/professionals/team/camila-lara.webp",
     bio: "Licenciada en Psicología con orientación psicoanalítica. Profesora de Enseñanza Media y Superior en Psicología y de Educación Primaria. Maestranda en Psicología Educacional, con diplomatura superior en Diversidad y Educación.",
   },
@@ -261,7 +261,7 @@ export const professionals = [
   {
     id: "daniela-lopez",
     name: "Lic. Daniela Lopez",
-    number: null,
+    number: "M.N. 53724",
     photo: "/professionals/team/daniela-lopez.webp",
     bio: "Especialista en Psicología Clínica. Psicóloga de planta en el Hospital F. J. Muñiz (CABA), con formación en género y psico-oncología.",
   },
