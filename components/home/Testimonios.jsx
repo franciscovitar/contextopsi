@@ -26,6 +26,14 @@ const testimonios = [
     role: "Psicólogx de la red",
     text: "Me parece excelente el funcionamiento de Contexto.Psi. Luego de haber pasado por otras experiencias y equipos, la profesionalidad con la que realizan las derivaciones me deja muy satisfecha, y sobre todo acompañada.",
   },
+  {
+    role: "Consultante",
+    text: "Estoy muy contenta con mi terapeuta, es un 10. Muy recomendable, gracias!",
+  },
+  {
+    role: "Curso asincrónico Psicoeducación",
+    text: "Me re sirvió para abordar el contacto con las emociones con mis pacientes. Les expliqué los componentes de la experiencia emocional y estamos trabajando con eso",
+  },
 ];
 
 const chunkArray = (array, size) => {
