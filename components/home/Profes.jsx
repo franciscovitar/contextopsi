@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import "../styles/_profes.scss";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { CustomNextArrow } from "./CustomNextArrow";
 import { CustomPrevArrow } from "./CustomPrevArrow";
+import ProfessionalModal from "./ProfessionalModal";
+import ProfessionalPhoto from "./ProfessionalPhoto";
+import { professionals } from "./teamData";
 
 const lineVariants = {
   viewport: { once: true },
@@ -15,66 +18,57 @@ const lineVariants = {
 
 const settings = {
   infinite: true,
-  speed: 500,
-  slidesToShow: 8,
-  slidesToScroll: 2,
+  speed: 900,
+  slidesToShow: 7,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3500,
   prevArrow: <CustomPrevArrow />,
   nextArrow: <CustomNextArrow />,
   responsive: [
-    {
-      breakpoint: 1400,
-      settings: { slidesToShow: 4 },
-    },
-    {
-      breakpoint: 800,
-      settings: { slidesToShow: 2 },
-    },
+    { breakpoint: 1400, settings: { slidesToShow: 4 } },
+    { breakpoint: 800, settings: { slidesToShow: 2 } },
   ],
 };
 
-const professionals = [
-  { name: "Lic. Florencia Alvarez", number: "M.N. 76412" },
-  { name: "Lic. Julieta Arriola", number: "M.N. 65610" },
-  { name: "Lic. Magalí Bergera", number: "M.N. 63302" },
-  { name: "Lic. Stefanía Carancini", number: "M.N. 71160" },
-  { name: "Lic. Rocío Díaz", number: "M.P. 14758" },
-  { name: "Lic. Mariana Fanello", number: "M.N. 68349" },
-  { name: "Lic. Ayelén Figueroa", number: "M.N. 78373" },
-  { name: "Lic. Silvia Ferreyra", number: "M.N. 55280" },
-  { name: "Lic. Francisco Herzberg", number: "M.N. 64321" },
-  { name: "Lic. Flor Inchauspe", number: "M.N. 66484" },
-  { name: "Lic. Luciana Zalazar", number: "M.N. 68763" },
-  { name: "Lic. Alejandra Teplitzchi", number: "M.N. 65227" },
-  { name: "Lic. Antonella Fernandez", number: "M.N. 78322" },
-  { name: "Lic. Nicolás Parera", number: "M.N. 69818" },
-  { name: "Lic. Silvina Acosta", number: "M.N. 69755" },
-  { name: "Lic. Sofía Capria", number: "M.N. 63767" },
-  { name: "Lic. Tabhata Casco", number: "M.N. 77173" },
-];
+function ProfessionalCard({ professional, onSeeMore }) {
+  return (
+    <div className="profesional">
+      <div className="card">
+        <div className="professional-image-wrapper">
+          <ProfessionalPhoto
+            professional={professional}
+            className="professional-image"
+          />
+        </div>
 
-const professionals2 = [
-  { name: "Lic. Bárbara Ini", number: "M.N. 70215" },
-  { name: "Lic. Camila Larocca", number: "M.N. 72753" },
-  { name: "Lic. Lucila Lavagnino", number: "M.N. 78314" },
-  { name: "Lic. Natalí Lipski", number: "M.N. 72467" },
-  { name: "Lic. Brenda Lopatka", number: "M.N. 71964" },
-  { name: "Lic. Daniela Ledesma", number: "M.P. 77331" },
-  { name: "Lic. Lucía Moavro", number: "M.N. 68467" },
-  { name: "Lic. Victoria Nuñez", number: "M.N. 59247" },
-  { name: "Lic. Verónica Percara", number: "M.N. 67069" },
-  { name: "Lic. Julieta Rosenzvit", number: "M.N. 69903" },
-  { name: "Lic. Josefina Rueda", number: "M.N. 74790" },
-  { name: "Lic. Patricia Sosa", number: "M.N. 70123" },
-  { name: "Dra. Alicia DeMarchi", number: "M.N. 179772" },
-  { name: "Dra. Lucía Nosiglia", number: "M.N. 163217" },
-  { name: "Dra. Lucía Vendrell", number: "M.N. 172936" },
-  { name: "Lic. Magalí Jurnet", number: "M.N. 8250" },
-  { name: "Lic. Melanie Salem", number: "M.N. 72090" },
-  { name: "Dr. Luciano Varela", number: "M.N. 181476" },
-];
+        <p className="name">{professional.name}</p>
+        <p className={"number" + (professional.number ? "" : " number-empty")}>
+          {professional.number || "\u00A0"}
+        </p>
+
+        <button
+          type="button"
+          className="see-more"
+          onClick={() => onSeeMore(professional)}
+          aria-label={"Ver más sobre " + professional.name}
+        >
+          Ver más
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Profesionales() {
+  const [selected, setSelected] = useState(null);
+  const closeModal = useCallback(() => setSelected(null), []);
+
+  const [firstRow, secondRow] = useMemo(
+    () => [professionals.slice(0, 17), professionals.slice(17)],
+    []
+  );
+
   return (
     <div className="contenedor-principal-Profesionales">
       <div className="titulo">
@@ -96,25 +90,26 @@ function Profesionales() {
       </div>
 
       <Slider className="elSlider" {...settings}>
-        {professionals.map((professional, index) => (
-          <div key={index} className="profesional">
-            <div className="card">
-              <p className="name">{professional.name}</p>
-              <p className="number">{professional.number}</p>
-            </div>
-          </div>
+        {firstRow.map((professional) => (
+          <ProfessionalCard
+            key={professional.id}
+            professional={professional}
+            onSeeMore={setSelected}
+          />
         ))}
       </Slider>
+
       <Slider className="elSlider" {...settings}>
-        {professionals2.map((professional, index) => (
-          <div key={index} className="profesional">
-            <div className="card">
-              <p className="name">{professional.name}</p>
-              <p className="number">{professional.number}</p>
-            </div>
-          </div>
+        {secondRow.map((professional) => (
+          <ProfessionalCard
+            key={professional.id}
+            professional={professional}
+            onSeeMore={setSelected}
+          />
         ))}
       </Slider>
+
+      <ProfessionalModal professional={selected} onClose={closeModal} />
     </div>
   );
 }

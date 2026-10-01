@@ -13,9 +13,9 @@ const inter = Poppins({
 });
 
 export const metadata = {
-  title: "Contexto.Psi",
+  title: "Terapia con perspectiva de género, virtual o presencial en Buenos Aires",
   description:
-    "En nuestro consultorio psicológico, nos dedicamos a mejorar tu salud mental y bienestar emocional. Ofrecemos servicios personalizados para abordar tus desafíos emocionales, planificar tu bienestar y asegurar una vida emocional equilibrada. Descubre cómo podemos ayudarte hoy mismo.",
+    "Salud mental con perspectiva de género y de derechos. Terapia presencial en Buenos Aires y virtual en todo el mundo, con equipo multidisciplinario de psicólogxs, psiquiatras y nutricionistas.",
   keywords: [
     "psicología",
     "terapia",
@@ -30,7 +30,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <link rel="canonical" href="https://www.contextopsi.com.ar/" />
         <meta
