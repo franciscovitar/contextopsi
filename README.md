@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Contexto.Psi
 
-## Getting Started
+Real client website for **Contexto.Psi**, a multidisciplinary mental-health network offering in-person care in Buenos Aires and virtual care internationally.
 
-First, run the development server:
+**Live site:** https://www.contextopsi.com.ar/  
+**Repository:** https://github.com/franciscovitar/contextopsi
+
+## Recruiter / Engineering Snapshot
+
+**Problem.** Turn a real clinical team, service offering and contact/admission journey into a maintainable public product that is easy to navigate, keeps institutional content current and supports discoverability.
+
+**Architecture.**
+- **Next.js 14 App Router + React 18** for the application and route structure.
+- Reusable home/page sections under `components/home/`.
+- Real team/coordinator content centralized in `components/home/teamData.js` and rendered through reusable professional cards/modals.
+- **React Slick** for team/content carousels and **Framer Motion** for viewport motion.
+- Component-level **Sass**, plus Bootstrap utilities/icons where useful.
+- Public routes include the main site plus contact, talks/content/course and supervision surfaces.
+
+## Forms and integrations
+
+The contact form is a controlled client flow using **EmailJS**:
+
+- required-field validation before submission;
+- explicit loading/disabled state;
+- success only after `sendForm()` resolves;
+- error feedback through `react-hot-toast`;
+- form reset after successful delivery;
+- a Google Analytics `generate_lead` event after a successful submission.
+
+No server-side email backend is implied by this repository.
+
+## SEO and metadata
+
+The root layout defines:
+
+- a descriptive title and meta description;
+- relevant keyword metadata;
+- canonical URL for `https://www.contextopsi.com.ar/`;
+- Google site-verification tags;
+- Google Analytics loading through `next/script`.
+
+The site’s current metadata is written around its real mental-health service and location/virtual-care offering rather than generic template copy.
+
+## Engineering decisions
+
+- Keep real team bios and professional identifiers in one shared data module instead of duplicating them across views.
+- Use reusable cards and an accessible modal flow for team detail rather than separate hard-coded pages for every professional.
+- Keep user feedback truthful around form delivery: a failed EmailJS request does not produce a success state.
+- Preserve the client’s existing visual/product structure while making targeted, reversible changes instead of broad rewrites.
+
+## Verification
+
+Available repository checks:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The current repository does **not** define an automated test script, so this README does not claim automated test coverage. For UI/content changes, browser verification remains necessary in addition to lint/build checks.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Run locally
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Then open http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Current status
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Active client product with real institutional/team content and a live public site. This README documents only behavior visible in the current repository; it does not claim unsupported traffic, conversion, accessibility or business-impact metrics.
