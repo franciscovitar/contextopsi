@@ -6,9 +6,9 @@ import "../styles/_faqHome.scss";
 
 const faqs = [
   {
-    question: "¿Cómo funciona el proceso de admisión?",
+    question: "Cómo hago para empezar terapia?",
     answer:
-      "Completás un formulario breve con tus datos, motivo de consulta y preferencias. Nuestro equipo de admisión se contacta con vos en menos de 4 días hábiles para orientarte y derivarte lx mejor profesional para vos.",
+      "Completás un formulario breve con tus datos, motivo de consulta y preferencias. Nuestro equipo de Admisión se contacta con vos dentro de 48hs hábiles y coordinan un llamado inicial. Este nos sirve para entender tu motivo de consulta y derivarte con lx mejor profesional para vos.",
   },
   {
     question: "¿Atienden de forma presencial y virtual?",
