@@ -22,9 +22,11 @@ export default function HomeWelcome() {
           </h1>
 
           <p>
-            Atención psicológica para todas las edades. Presencial en Buenos
-            Aires, virtual en todo el mundo. Psicólogxs, psiquiatras y
-            nutricionistas con distintas corrientes teóricas.
+            Si querés empezar terapia, te acompañamos a encontrar el espacio
+            indicado para vos. Brindamos atención psicológica para todas las
+            edades, presencial en Buenos Aires y virtual en todo el mundo.
+            Contamos con profesionales de psicología, psiquiatría y nutrición,
+            con distintas corrientes teóricas.
           </p>
 
           <div className="home-actions">
